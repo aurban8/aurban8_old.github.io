@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>States and Their Popularity from Wikipedia Views in the Jeopardy Dataset - Andrea's First Website</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://aurban8.github.io/jeopardy-states-wikipedia.html">
+
+        <meta name="author" content="Andrea Urban" />
+        <meta name="keywords" content="jeopardy" />
+        <meta name="description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity." />
+
+        <meta property="og:site_name" content="Andrea's First Website" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="States and Their Popularity from Wikipedia Views in the Jeopardy Dataset"/>
+        <meta property="og:url" content="https://aurban8.github.io/jeopardy-states-wikipedia.html"/>
+        <meta property="og:description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity."/>
+        <meta property="article:published_time" content="2017-03-22" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="jeopardy" />
+            <meta property="article:author" content="Andrea Urban" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://aurban8.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://aurban8.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://aurban8.github.io/theme/css/pygments/emacs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://aurban8.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://aurban8.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Andrea's First Website ATOM Feed"/>
+
+
+
+        <link href="https://aurban8.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Andrea's First Website Blog ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://aurban8.github.io/" class="navbar-brand">
+Andrea's First Website            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://aurban8.github.io/pages/about.html">
+                             About Me
+                          </a></li>
+                        <li class="active">
+                            <a href="https://aurban8.github.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://aurban8.github.io/jeopardy-states-wikipedia.html"
+                       rel="bookmark"
+                       title="Permalink to States and Their Popularity from Wikipedia Views in the Jeopardy Dataset">
+                        States and Their Popularity from Wikipedia Views in the Jeopardy Dataset
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-03-22T12:01:00-07:00"> Wed 22 March 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://aurban8.github.io/tag/jeopardy.html">jeopardy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Last time, I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn't find much of a relationship. Here, I want to investigate whether the frequency of a state's appearance is related to its <em>popularity</em>. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.</p>
+<p>Here's a reminder of the <a href="https://www.reddit.com/r/datasets/comments/1uyd0t/200000_jeopardy_questions_in_a_json_file/">Jeopardy data set</a></p>
+<p>File format:</p>
+<blockquote><p>The json file is an unordered list of questions where each question has</p>
+<p>'category' : the question category, e.g. "HISTORY"</p>
+<p>'value' : Dollar value of the question as string, e.g. "$200"
+Note: This is "None" for Final Jeopardy! and Tiebreaker questions</p>
+<p>'question' : text of question
+Note: This sometimes contains hyperlinks and other things messy text such as when there's a picture or video question</p>
+<p>'answer' : text of answer</p>
+<p>'round' : one of "Jeopardy!","Double Jeopardy!","Final Jeopardy!" or "Tiebreaker"
+Note: Tiebreaker questions do happen but they're very rare (like once every 20 years)</p>
+<p>'show_number' : string of show number, e.g '4680'</p>
+<p>'air_date' : the show air date in format YYYY-MM-DD</p>
+</blockquote>
+<h2 id="Let's-load-in-the-data-and-limit-the-time-period.">Let's load in the data and limit the time period.<a class="anchor-link" href="#Let's-load-in-the-data-and-limit-the-time-period.">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># This command allows plots to appear in the jupyter notebook.</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline   
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'max_colwidth'</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>  <span class="c1"># Show more text in dataframe.</span>
+<span class="c1"># First import the pandas package and load the cleaned json file into a dataframe called df.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">'JEOPARDY_QUESTIONS1_cleaned.json'</span><span class="p">)</span>
+<span class="c1"># Let's convert air_date to date/time, rather than a string.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'air_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'air_date'</span><span class="p">],</span> <span class="n">yearfirst</span><span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Only consider data from well-sampled years.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'air_date'</span><span class="p">]</span><span class="o">>=</span><span class="s1">'2004-01-01'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'air_date'</span><span class="p">]</span><span class="o"><=</span><span class="s1">'2011-12-31'</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">list_of_states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Alabama'</span><span class="p">,</span><span class="s1">'Alaska'</span><span class="p">,</span><span class="s1">'Arizona'</span><span class="p">,</span><span class="s1">'Arkansas'</span><span class="p">,</span><span class="s1">'California'</span><span class="p">,</span> 
+                  <span class="s1">'Colorado'</span><span class="p">,</span><span class="s1">'Connecticut'</span><span class="p">,</span> <span class="s1">'Delaware'</span><span class="p">,</span> <span class="s1">'Florida'</span><span class="p">,</span><span class="s1">'Georgia'</span><span class="p">,</span>
+                  <span class="s1">'Hawaii'</span><span class="p">,</span><span class="s1">'Idaho'</span><span class="p">,</span><span class="s1">'Illinois'</span><span class="p">,</span><span class="s1">'Indiana'</span><span class="p">,</span> <span class="s1">'Iowa'</span><span class="p">,</span> <span class="s1">'Kansas'</span><span class="p">,</span>
+                  <span class="s1">'Kentucky'</span><span class="p">,</span> <span class="s1">'Louisiana'</span><span class="p">,</span> <span class="s1">'Maine'</span><span class="p">,</span> <span class="s1">'Maryland'</span><span class="p">,</span> <span class="s1">'Massachusetts'</span><span class="p">,</span>
+                  <span class="s1">'Michigan'</span><span class="p">,</span><span class="s1">'Minnesota'</span><span class="p">,</span><span class="s1">'Mississippi'</span><span class="p">,</span> <span class="s1">'Missouri'</span><span class="p">,</span><span class="s1">'Montana'</span><span class="p">,</span><span class="s1">'Nebraska'</span><span class="p">,</span> 
+                  <span class="s1">'Nevada'</span><span class="p">,</span><span class="s1">'New Hampshire'</span><span class="p">,</span> <span class="s1">'New Jersey'</span><span class="p">,</span><span class="s1">'New Mexico'</span><span class="p">,</span> <span class="s1">'New York'</span><span class="p">,</span>
+                  <span class="s1">'North Carolina'</span><span class="p">,</span> <span class="s1">'North Dakota'</span><span class="p">,</span><span class="s1">'Ohio'</span><span class="p">,</span><span class="s1">'Oklahoma'</span><span class="p">,</span> <span class="s1">'Oregon'</span><span class="p">,</span>
+                  <span class="s1">'Pennsylvania'</span><span class="p">,</span> <span class="s1">'Rhode Island'</span><span class="p">,</span><span class="s1">'South Carolina'</span><span class="p">,</span> <span class="s1">'South Dakota'</span><span class="p">,</span>
+                  <span class="s1">'Tennessee'</span><span class="p">,</span><span class="s1">'Texas'</span><span class="p">,</span><span class="s1">'Utah'</span><span class="p">,</span><span class="s1">'Vermont'</span><span class="p">,</span> <span class="s1">'Virginia'</span><span class="p">,</span> <span class="s1">'Washington'</span><span class="p">,</span> 
+                  <span class="s1">'West Virginia'</span><span class="p">,</span> <span class="s1">'Wisconsin'</span><span class="p">,</span> <span class="s1">'Wyoming'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create new dataframe with only states as answers.</span>
+<span class="n">state_answers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">list_of_states</span><span class="p">)]</span>
+<span class="n">count_state_answers</span> <span class="o">=</span> <span class="n">state_answers</span><span class="o">.</span><span class="n">answer</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">state_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">count_state_answers</span><span class="p">)</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'total_count'</span><span class="p">]</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>total_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>California</th>
+<td>92</td>
+</tr>
+<tr>
+<th>Florida</th>
+<td>81</td>
+</tr>
+<tr>
+<th>Alaska</th>
+<td>75</td>
+</tr>
+<tr>
+<th>Hawaii</th>
+<td>74</td>
+</tr>
+<tr>
+<th>Texas</th>
+<td>73</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">Wikipedia article word counts don't trace Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">¶</a></h2><p>In order to answer the question of why some states appear as Jeopardy answers more frequently than others I decided to use wikipedia as a proxy for popularity. I first tried looking into word counts on a state's wikipedia article. I was thinking that possibly state's that are more popular or more interesting will have longer articles written about them. Let's see what that shows.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To investigate wikipedia articles, I used a <a href="https://wikipedia.readthedocs.io/en/latest/">python wrapper for the wikipedia API</a> using the command <code>pip install wikipedia</code> to install it.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">wikipedia</span>
+<span class="k">print</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"California"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[u&apos;California&apos;, u&apos;California City, California&apos;, u&apos;Baja California Peninsula&apos;, u&apos;Northern California&apos;, u&apos;Spanish missions in California&apos;, u&apos;Governor of California&apos;, u&apos;California Gold Rush&apos;, u&apos;Outline of California&apos;, u&apos;History of California&apos;, u&apos;California English&apos;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="s2">"California"</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">150</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>California (/ˌkælᵻˈfɔːrnjə, -ni.ə/ KAL-ə-FORN-yə, KAL-ə-FORN-ee-ə) is the most populous state in the United States and the third most extensive by are
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"Georgia"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[u&apos;Georgia&apos;, u&apos;Georgia (country)&apos;, u&apos;University of Georgia&apos;, u&apos;President of Georgia&apos;, u&apos;Kingdom of Georgia&apos;, u&apos;History of Georgia (country)&apos;, u&apos;Georgia (U.S. state)&apos;, u&apos;Province of Georgia&apos;, u&apos;Georgia Dome&apos;, u&apos;Georgia Southern\u2013Georgia State rivalry&apos;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># The following line gives an error because of ambiguity between </span>
+<span class="c1"># Georgia-the U.S. state, Georgia-the country, and others.</span>
+<span class="c1"># print wikipedia.summary("Georgia")[0:150]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Georgia, Washington, New York will possibly an error. 
+I used the <a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States">links to states on wikipedia</a> to figure out which states could cause problems.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Make a copy of the the original list of states and create a list `list_of_states_wiki` to use to search wikipedia.</span>
+<span class="n">list_of_states_wiki</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list_of_states</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'Georgia'</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Georgia (U.S. state)'</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'New York'</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'New York (state)'</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'Washington'</span><span class="p">)</span>
+<span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Washington (state)'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">list_of_states_wiki</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">list_of_states_wiki</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Alabama&apos;,
+ &apos;Alaska&apos;,
+ &apos;Arizona&apos;,
+ &apos;Arkansas&apos;,
+ &apos;California&apos;,
+ &apos;Colorado&apos;,
+ &apos;Connecticut&apos;,
+ &apos;Delaware&apos;,
+ &apos;Florida&apos;,
+ &apos;Georgia (U.S. state)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Grab all wikipedia state articles and count the number of words in the article. </span>
+<span class="c1"># Make sure the word "state" is in the summary.</span>
+<span class="n">state_summary</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">state_word_count</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">list_of_states_wiki</span><span class="p">:</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">state</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+    <span class="n">state_summary</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary</span>
+    <span class="k">if</span> <span class="s1">'state'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">summary</span><span class="p">:</span> <span class="k">print</span> <span class="s2">"Check state:"</span><span class="p">,</span> <span class="n">state</span>
+    <span class="n">statepage</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">WikipediaPage</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">state_word_count</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">statepage</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Check state: Hawaii
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Something is wrong with Hawaii. </span>
+<span class="k">print</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"Hawaii"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[u&apos;Hawaii&apos;, u&apos;Hawaii County, Hawaii&apos;, u&apos;Flag of Hawaii&apos;, u&apos;Territory of Hawaii&apos;, u&apos;Hawaii (island)&apos;, u&apos;Outline of Hawaii&apos;, u&apos;Kingdom of Hawaii&apos;, u&apos;Sugar plantations in Hawaii&apos;, u&apos;University of Hawaii&apos;, u&apos;Native Hawaiians&apos;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Search seems fine. What about the summary and word count?</span>
+<span class="k">print</span> <span class="n">state_summary</span><span class="p">[</span><span class="s1">'Hawaii'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">state_word_count</span><span class="p">[</span><span class="s1">'Hawaii'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Let's check another state to make sure other states are working ok.</span>
+<span class="k">print</span> <span class="n">state_summary</span><span class="p">[</span><span class="s1">'Arizona'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">state_word_count</span><span class="p">[</span><span class="s1">'Arizona'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Arizona (/ɛərᵻˈzoʊnə, ærᵻ-/) (Navajo: Hoozdo Hahoodzo [xòːztò xɑ̀xòːtsò]; O&apos;odham: Alĭ ṣonak [ˡaɺi ˡʃonak]) is a state in the southwestern region of the United States. It is also part of the Western U
+9386
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Something is odd about Hawaii's wikipedia. I don't know enough about wikipedia formatting to figure this out. For now, I'll just enter Hawaii's word count by hand.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">state_word_count</span><span class="p">[</span><span class="s1">'Hawaii'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12878</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Change state names back to original to combine with the `state_data` dataframe.</span>
+<span class="n">state_word_count</span><span class="p">[</span><span class="s1">'Washington'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_word_count</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Washington (state)"</span><span class="p">)</span>
+<span class="n">state_word_count</span><span class="p">[</span><span class="s1">'Georgia'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_word_count</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Georgia (U.S. state)"</span><span class="p">)</span>
+<span class="n">state_word_count</span><span class="p">[</span><span class="s1">'New York'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_word_count</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"New York (state)"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create new dataframe to combine with `state_data` dataframe.</span>
+<span class="n">df_state_word_count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">state_word_count</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">'index'</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="n">df_state_word_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'wiki_word_count'</span><span class="p">]</span>
+<span class="c1"># Combine word counts to `state_data` dataframe.</span>
+<span class="n">state_data</span> <span class="o">=</span> <span class="n">state_data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_state_word_count</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'outer'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's plot the number of words in a wikipedia article and the number of times a state has appeared on Jeopardy to see if there's a relationship.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">state_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">'total_count'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">'wiki_word_count'</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">'scatter'</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16000</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+Obxkn9ALAAAAAElFTkSuQmCC
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hmmm... This is not as useful as I'd like it to be.  Low wikipedia word count articles seem to go with a low likelihood of appearing on Jeopardy. However, if an article has many words, it's difficult to determine how likely it is to appear on Jeopardy. In summary, don't study states with a low wikipedia article word count.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">Wikipedia page views is a good tracer of Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">¶</a></h2><p>Rather than wikipedia word count, perhaps an alternative indicator of popularity is <em>wikipedia page views</em>. Luckily there is <a href="https://github.com/mediawiki-utilities/python-mwviews">another python tool which uses wikipedia's API to get page views</a>. To install it, use <code>pip install mwviews</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the wikipedia tool</span>
+<span class="kn">from</span> <span class="nn">mwviews.api</span> <span class="kn">import</span> <span class="n">PageviewsClient</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">PageviewsClient</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Here's a fun command that let's you track the current trends on wikipedia.</span>
+<span class="c1"># If you leave off year, month, and day, the returned result will be for `today`.</span>
+<span class="n">p</span><span class="o">.</span><span class="n">top_articles</span><span class="p">(</span><span class="s1">'en.wikipedia'</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2017</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="mo">03</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">19</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[{u&apos;article&apos;: u&apos;Main_Page&apos;, u&apos;rank&apos;: 1, u&apos;views&apos;: 22740466},
+ {u&apos;article&apos;: u&apos;Special:Search&apos;, u&apos;rank&apos;: 2, u&apos;views&apos;: 2196670},
+ {u&apos;article&apos;: u&apos;Chuck_Berry&apos;, u&apos;rank&apos;: 3, u&apos;views&apos;: 912869},
+ {u&apos;article&apos;: u&apos;Special:Book&apos;, u&apos;rank&apos;: 4, u&apos;views&apos;: 365141},
+ {u&apos;article&apos;: u&apos;Iron_Fist_(comics)&apos;, u&apos;rank&apos;: 5, u&apos;views&apos;: 343979},
+ {u&apos;article&apos;: u&apos;Yogi_Adityanath&apos;, u&apos;rank&apos;: 6, u&apos;views&apos;: 329172},
+ {u&apos;article&apos;: u&apos;Iron_Fist_(TV_series)&apos;, u&apos;rank&apos;: 7, u&apos;views&apos;: 299507},
+ {u&apos;article&apos;: u&apos;Beauty_and_the_Beast_(2017_film)&apos;,
+  u&apos;rank&apos;: 8,
+  u&apos;views&apos;: 282150},
+ {u&apos;article&apos;: u&apos;More_Life&apos;, u&apos;rank&apos;: 9, u&apos;views&apos;: 241612},
+ {u&apos;article&apos;: u&apos;Hans_Oster&apos;, u&apos;rank&apos;: 10, u&apos;views&apos;: 194937}]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since I found in my previous post that the distribution of state appearances doesn't seem to vary much from year to year, I'll use the most recent year, 2016, to look at the page views on wikipedia over the course of a year.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Here are the results for Arizona for 2016. </span>
+<span class="n">p</span><span class="o">.</span><span class="n">article_views</span><span class="p">(</span><span class="s1">'en.wikipedia'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Arizona'</span><span class="p">],</span> 
+                <span class="n">granularity</span><span class="o">=</span><span class="s1">'monthly'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">'2016010100'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'2016123100'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{datetime.datetime(2016, 1, 1, 0, 0): {&apos;Arizona&apos;: 131409},
+ datetime.datetime(2016, 2, 1, 0, 0): {&apos;Arizona&apos;: 125917},
+ datetime.datetime(2016, 3, 1, 0, 0): {&apos;Arizona&apos;: 151741},
+ datetime.datetime(2016, 4, 1, 0, 0): {&apos;Arizona&apos;: 174710},
+ datetime.datetime(2016, 5, 1, 0, 0): {&apos;Arizona&apos;: 123279},
+ datetime.datetime(2016, 6, 1, 0, 0): {&apos;Arizona&apos;: 112169},
+ datetime.datetime(2016, 7, 1, 0, 0): {&apos;Arizona&apos;: 101361},
+ datetime.datetime(2016, 8, 1, 0, 0): {&apos;Arizona&apos;: 106251},
+ datetime.datetime(2016, 9, 1, 0, 0): {&apos;Arizona&apos;: 112453},
+ datetime.datetime(2016, 10, 1, 0, 0): {&apos;Arizona&apos;: 120101},
+ datetime.datetime(2016, 11, 1, 0, 0): {&apos;Arizona&apos;: 137877},
+ datetime.datetime(2016, 12, 1, 0, 0): {&apos;Arizona&apos;: 114489}}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># The wikipedia tool doesn't automatically calculate page views annually. </span>
+<span class="c1"># Instead I'll just sum up the data for each month to get the results for a year.</span>
+<span class="n">state_views</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">list_of_states_wiki</span><span class="p">:</span>
+    <span class="n">views</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">article_views</span><span class="p">(</span><span class="s1">'en.wikipedia'</span><span class="p">,</span> <span class="p">[</span><span class="n">state</span><span class="p">],</span> 
+                        <span class="n">granularity</span><span class="o">=</span><span class="s1">'monthly'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">'2016010100'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'2016123100'</span><span class="p">)</span>
+    <span class="n">total_views</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">views</span><span class="p">:</span>
+        <span class="n">key_state_name</span> <span class="o">=</span> <span class="n">views</span><span class="p">[</span><span class="n">view</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="n">total_views</span> <span class="o">+=</span><span class="n">views</span><span class="p">[</span><span class="n">view</span><span class="p">][</span><span class="n">key_state_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">state_views</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_views</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Combine new state view data into state_data dataframe.</span>
+<span class="n">state_views</span><span class="p">[</span><span class="s1">'Washington'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_views</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Washington (state)"</span><span class="p">)</span>
+<span class="n">state_views</span><span class="p">[</span><span class="s1">'Georgia'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_views</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Georgia (U.S. state)"</span><span class="p">)</span>
+<span class="n">state_views</span><span class="p">[</span><span class="s1">'New York'</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_views</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"New York (state)"</span><span class="p">)</span>
+<span class="n">df_state_views</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">state_views</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">'index'</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="n">df_state_views</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'wiki_views'</span><span class="p">]</span>
+<span class="n">state_data</span> <span class="o">=</span> <span class="n">state_data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_state_views</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'outer'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">state_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>total_count</th>
+<th>wiki_word_count</th>
+<th>wiki_views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Alabama</th>
+<td>32</td>
+<td>11158.0</td>
+<td>1340664.0</td>
+</tr>
+<tr>
+<th>Alaska</th>
+<td>75</td>
+<td>10073.0</td>
+<td>2631738.0</td>
+</tr>
+<tr>
+<th>Arizona</th>
+<td>44</td>
+<td>9386.0</td>
+<td>1511757.0</td>
+</tr>
+<tr>
+<th>Arkansas</th>
+<td>20</td>
+<td>8570.0</td>
+<td>1050623.0</td>
+</tr>
+<tr>
+<th>California</th>
+<td>92</td>
+<td>11159.0</td>
+<td>4985559.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">state_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">'total_count'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">'wiki_views'</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">'scatter'</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAacAAAEQCAYAAAAUILtVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XucldV97/HPFwQZURAs4hF1wChekljFF2hq0gwEvKR9
+GdM0CqeJ2EzPSaJtbHoLJKcBT9pXgm0ak7aoOaERbQSM5mJPrRAq06Q9GlCJ2IBIY2YqRGGiQqsl
+EeV3/njWwMM4l71n9uWZ2d/367VfPnvt57L2k8n+sdb6PWspIjAzMyuSEfWugJmZWXcOTmZmVjgO
+TmZmVjgOTmZmVjgOTmZmVjgOTmZmVjg1CU6Sxkv6uqRtkn4o6SJJEyStk7Rd0lpJ43P7L5a0I+1/
+aa58hqQtkp6WdEuufLSk1emYhyWdlvtsYdp/u6Rrc+VTJT2SPlsl6aha3AszM+tfrVpOXwQeiIhz
+gF8EngIWAesj4izgIWAxgKRzgauBc4ArgOWSlM5zK9AaEdOB6ZIuS+WtwIsRcSZwC3BzOtcE4NPA
+TOAiYEkuCC4DPp/OtTedw8zMCqDqwUnSOOAdEfFVgIh4LSL2Ae8BVqbdVgJXpe0rgdVpv3ZgBzBL
+0knAcRGxKe13Z+6Y/LnuBeak7cuAdRGxLyL2AuuAy9Nnc4D7ctd/b4W+spmZDVItWk7TgJ9K+qqk
+xyV9WdIxwOSI2A0QEc8DJ6b9pwDP5o7flcqmADtz5TtT2RHHRMTrwD5JE3s7l6QTgJci4mDuXCdX
+5Nuamdmg1SI4HQXMAP46ImYAr5B16XWfN6mS8yip/11K2sfMzOqgFkkAO4FnI+LR9P4+suC0W9Lk
+iNiduuz2pM93Aafmjj8llfVWnj/mJ5JGAuMi4kVJu4CWbsdsiIgXUpLGiNR6yp/rCJI8+aCZ2QBE
+xIAbAVVvOaWuu2clTU9F7wJ+CNwPXJfKFgLfTtv3A/NTBt404AxgY+r62ydpVkqQuLbbMQvT9vvJ
+EiwA1gLzUiCaAMxLZQAb0r7dr9/Td/ArgiVLltS9DkV5+V74Xvhe9P0arFqlT38M+JqkUcAzwG8C
+I4F7JH0I6CDL0CMitkq6B9gKHACuj8Pf9AbgDmAMWfbfg6l8BXCXpB3AC8D8dK6XJH0GeJSs2/Cm
+yBIjIGu9rU6fb07nMDOzAqhJcIqIJ8jSubub28v+nwU+20P5Y8Bbeyj/OSm49fDZHWQBrXv5j8nS
+y83MrGA8Q4SVrKWlpd5VKAzfi8N8Lw7zvagcVaJvcDiTFL5HZmblkUQUOSHCzMysXA5OZmZWOA5O
+ZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZW
+OA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5O
+ZmZWOA5OZmZWOA5OZmZWOA5OZmZWOA5OZmZWODUJTpLaJT0habOkjalsgqR1krZLWitpfG7/xZJ2
+SNom6dJc+QxJWyQ9LemWXPloSavTMQ9LOi332cK0/3ZJ1+bKp0p6JH22StJR1b8TZmZWilq1nA4C
+LRFxQUTMSmWLgPURcRbwELAYQNK5wNXAOcAVwHJJSsfcCrRGxHRguqTLUnkr8GJEnAncAtyczjUB
++DQwE7gIWJILgsuAz6dz7U3nMDOzAqhVcFIP13oPsDJtrwSuSttXAqsj4rWIaAd2ALMknQQcFxGb
+0n535o7Jn+teYE7avgxYFxH7ImIvsA64PH02B7gvd/33DuobmpkVWGdnJ5s2baKzs7PeVSlJrYJT
+AN+RtEnSb6WyyRGxGyAingdOTOVTgGdzx+5KZVOAnbnynansiGMi4nVgn6SJvZ1L0gnASxFxMHeu
+kwf9Lc3MCmjVqjU0N5/NvHkfobn5bFatWlPvKvWrVuMsl0TEc5ImAeskbScLWHnd3w+G+t+lpH3M
+zIa0zs5OWluvZ//+Dezffx6whdbW2cydO4dJkybVu3q9qklwiojn0n87JX0LmAXsljQ5InanLrs9
+afddwKm5w09JZb2V54/5iaSRwLiIeFHSLqCl2zEbIuIFSeMljUitp/y53mDp0qWHtltaWmhpaelt
+VzOzQmlvb2f06KkpMAGcx6hRzbS3t1c0OLW1tdHW1lax8ymikg2WHi4gHQOMiIiXJY0lG/e5CXgX
+WRLDMkmfACZExKKUEPE1sgSGKcB3gDMjIiQ9AnwM2AT8PfCliHhQ0vXAWyLieknzgasiYn5KiHgU
+mEHWhfkocGFE7JW0BvhGRKyRdCvwRETc1kP9o9r3yMysWjo7O2luPpv9+zcAWcupqWk2HR1PVbXl
+JImIGHAPVS1aTpOBb0qKdL2vRcQ6SY8C90j6ENBBlqFHRGyVdA+wFTgAXJ+LDjcAdwBjgAci4sFU
+vgK4S9IO4AVgfjrXS5I+QxaUArgpJUZAli24On2+OZ3DzGxYmTRpEitWLKe1dTajRjVz4EAHK1Ys
+L3SXHtSg5TTUueVkZsNBZ2cn7e3tTJ06tSaBabAtJwenfjg4mZmVb7DBydMXmZlZ4Tg4mZlZ4Tg4
+mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ
+4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4
+mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4Tg4mZlZ4dQsOEkaIelxSfen9xMkrZO0
+XdJaSeNz+y6WtEPSNkmX5spnSNoi6WlJt+TKR0tanY55WNJpuc8Wpv23S7o2Vz5V0iPps1WSjqr+
+XTAzs1LUsuV0I7A1934RsD4izgIeAhYDSDoXuBo4B7gCWC5J6ZhbgdaImA5Ml3RZKm8FXoyIM4Fb
+gJvTuSYAnwZmAhcBS3JBcBnw+XSuvekcZmZWADUJTpJOAd4NfCVX/B5gZdpeCVyVtq8EVkfEaxHR
+DuwAZkk6CTguIjal/e7MHZM/173AnLR9GbAuIvZFxF5gHXB5+mwOcF/u+u8d7Pc0M7PKqFXL6QvA
+HwKRK5scEbsBIuJ54MRUPgV4NrffrlQ2BdiZK9+Zyo44JiJeB/ZJmtjbuSSdALwUEQdz5zp5MF/Q
+zMwqp+rjLJJ+BdgdET+Q1NLHrtHHZ2VftkL7ALB06dJD2y0tLbS0tJRfIzOzYaytrY22traKna8W
+SQCXAFdKejfQBBwn6S7geUmTI2J36rLbk/bfBZyaO/6UVNZbef6Yn0gaCYyLiBcl7QJauh2zISJe
+kDRe0ojUesqf6w3ywcnMzN6o+z/cb7rppkGdr+rdehHxyYg4LSJOB+YDD0XEB4G/A65Luy0Evp22
+7wfmpwy8acAZwMbU9bdP0qyUIHFtt2MWpu33kyVYAKwF5qVANAGYl8oANqR9u1/fzMzqrJ7p058D
+7pH0IaCDLEOPiNgq6R6yzL4DwPUR0dXldwNwBzAGeCAiHkzlK4C7JO0AXiALgkTES5I+AzxK1m14
+U0qMgCxbcHX6fHM6h5mZFYAO/+5bTySF75GZWXkkERElj+135xkizMyscByczMyscByczMyscByc
+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
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Oooooh!  Look at that trend! Popular states on wikipedia searches are also popular states on Jeopardy!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [41]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Check with with the a correlation matrix as well.</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span><span class="n">state_data</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>total_count</th>
+<th>wiki_word_count</th>
+<th>wiki_views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>total_count</th>
+<td>1.000000</td>
+<td>0.358394</td>
+<td>0.821448</td>
+</tr>
+<tr>
+<th>wiki_word_count</th>
+<td>0.358394</td>
+<td>1.000000</td>
+<td>0.350184</td>
+</tr>
+<tr>
+<th>wiki_views</th>
+<td>0.821448</td>
+<td>0.350184</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Looks good. Remember that the closer the number is to +1, the more positively correlated the two variables are.</p>
+<p>However, looking back at the plot, there is an odd outlier. Let's take a look at that next.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="New-York-City-or-New-York-State?">New York City or New York State?<a class="anchor-link" href="#New-York-City-or-New-York-State?">¶</a></h2><p>What is that odd outlier located at <code>total_count</code> of about 70 and <code>wiki_views</code> under 1,000,000? It looks like its <code>total_count</code> value should be at least 30, or 40 less than it currently is.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># What is that outlier with total_count > 60, but wiki_views <1,000,000</span>
+<span class="n">state_data</span><span class="p">[(</span><span class="n">state_data</span><span class="p">[</span><span class="s1">'total_count'</span><span class="p">]</span><span class="o">></span><span class="mi">60</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">state_data</span><span class="p">[</span><span class="s1">'wiki_views'</span><span class="p">]</span><span class="o"><</span><span class="mi">1000000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>total_count</th>
+<th>wiki_word_count</th>
+<th>wiki_views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>New York</th>
+<td>70</td>
+<td>10338.0</td>
+<td>613533.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hmmm.... that's odd. I wonder if the fact that "New York" can sometimes refer to the city or the state is the reason it is an outlier.  (The proper name for the city is <a href="https://en.wikipedia.org/wiki/New_York_City">"City of New York"</a>.) Let's see if Jeopardy sometimes uses an answer of "New York" when asking about the city. Are there around 40 of these questions where the answer is really about the city of New York?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Find answers that are "New York" when the question contains the word "city."</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'city'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>10777</th>
+<td>2008-04-08</td>
+<td>New York</td>
+<td>A HOST OF GHOSTS</td>
+<td>The ghost of impresario David Belasco is said to haunt the theatre named for him on West 44th St. in this city</td>
+<td>Jeopardy!</td>
+<td>5437</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>130911</th>
+<td>2005-05-11</td>
+<td>New York</td>
+<td>PRESIDENTS</td>
+<td>In April 1789 Washington left Mount Vernon, going to this city to head the new governent</td>
+<td>Jeopardy!</td>
+<td>4773</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>148356</th>
+<td>2010-04-27</td>
+<td>New York</td>
+<td>ZOMBIELAND</td>
+<td>& they thought alligators were bad!  In 1984's "C.H.U.D." zombies haunt this city's sewer system</td>
+<td>Jeopardy!</td>
+<td>5907</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>150545</th>
+<td>2008-12-04</td>
+<td>New York</td>
+<td>STREETCAR</td>
+<td>Beginning service in 1832, this city's first streetcar ran along Bowery Street</td>
+<td>Jeopardy!</td>
+<td>5579</td>
+<td>600.0</td>
+</tr>
+<tr>
+<th>161170</th>
+<td>2006-07-03</td>
+<td>New York</td>
+<td>THE U.S. CENSUS</td>
+<td>This city has the largest Hispanic, Asian & African-American populations in the U.S.</td>
+<td>Double Jeopardy!</td>
+<td>5036</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>204556</th>
+<td>2011-10-20</td>
+<td>New York</td>
+<td>ACTING HURT</td>
+<td>John Hurt reprised the role of Quentin Crisp for 2009's "An Englishman in" this U.S. city</td>
+<td>Double Jeopardy!</td>
+<td>6229</td>
+<td>1600.0</td>
+</tr>
+<tr>
+<th>207097</th>
+<td>2011-12-28</td>
+<td>New York</td>
+<td>UNCOMMON BONDS</td>
+<td>J. Max Bond Jr., who helped design the National September 11 Memorial, was a 1980-86 member of this city's Planning Commission</td>
+<td>Jeopardy!</td>
+<td>6278</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>208353</th>
+<td>2006-11-15</td>
+<td>New York</td>
+<td>AROUND THE U.S.A.</td>
+<td>"I love" this city, America's biggest metropolis--doesn't everyone?</td>
+<td>Jeopardy!</td>
+<td>5103</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>42784</th>
+<td>2010-03-29</td>
+<td>New York</td>
+<td>MIDDLE INITIAL V.</td>
+<td>John V. Lindsay was mayor of this city in the turbulent '60s & '70s, first as a Republican & then as a Democrat</td>
+<td>Jeopardy!</td>
+<td>5886</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>45134</th>
+<td>2011-06-01</td>
+<td>New York</td>
+<td>HAY IS</td>
+<td>...The middle name of Jock Whitney, millionaire art collector & publisher of this city's Herald Tribune</td>
+<td>Double Jeopardy!</td>
+<td>6163</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>45161</th>
+<td>2010-11-24</td>
+<td>New York</td>
+<td>BRIGHT LIGHTS, BIG CITY</td>
+<td>This city is the brightest area along the East Coast</td>
+<td>Jeopardy!</td>
+<td>6028</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>64517</th>
+<td>2005-06-14</td>
+<td>New York</td>
+<td>THE FUN '40s</td>
+<td>(Sarah of the Clue Crew delivers the clue from beside a Blue Angels plane.)  During a visit to this city in 1946 the Blue Angels took their name from a nightclub found there</td>
+<td>Jeopardy!</td>
+<td>4797</td>
+<td>400.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Aha! So some New York city answers did sneak into my state-only dataframe. How many?</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'city'</span><span class="p">))][</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I'm not sure that's enough. I need about 28 more to reach my goal of 40 extra questions.</p>
+<p>Let's take a look in detail at some of the New York questions. Which questions have "New York" as the answer but don't mention "city" or "state" in the question?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Find questions where "New York" is the answer, but "city" or "state" don't appear in the question.</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'city'</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span> 
+   <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'state'</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>102164</th>
+<td>2004-04-16</td>
+<td>New York</td>
+<td>QUARTER BACKS</td>
+<td>A gift from France unveiled in 1886</td>
+<td>Jeopardy!</td>
+<td>4525</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>11265</th>
+<td>2005-01-26</td>
+<td>New York</td>
+<td>STATE THE COLLEGE TEAM</td>
+<td>Black Knights,Orangemen</td>
+<td>Jeopardy!</td>
+<td>4698</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>121918</th>
+<td>2011-06-09</td>
+<td>New York</td>
+<td>STATE SONGS?</td>
+<td>Billy Joel: "____ State Of Mind"</td>
+<td>Jeopardy!</td>
+<td>6169</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>123189</th>
+<td>2009-05-27</td>
+<td>New York</td>
+<td>STATES' GEOGRAPHIC CENTERS</td>
+<td>12 miles south of Oneida & 26 miles southwest of Utica</td>
+<td>Jeopardy!</td>
+<td>5703</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>126630</th>
+<td>2009-02-20</td>
+<td>New York</td>
+<td>HOME BOYS</td>
+<td>Knickerbockers</td>
+<td>Double Jeopardy!</td>
+<td>5635</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>131466</th>
+<td>2006-04-04</td>
+<td>New York</td>
+<td>GEOGRAPHIC CINEMA</td>
+<td>1931:"Sidewalks of ___"</td>
+<td>Jeopardy!</td>
+<td>4972</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>139200</th>
+<td>2011-02-23</td>
+<td>New York</td>
+<td>THE 13 COLONIES</td>
+<td>Under the Treaty of Breda, the Dutch gave up New Netherland to the British, who renamed it this in 1664</td>
+<td>Double Jeopardy!</td>
+<td>6093</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>141264</th>
+<td>2004-04-29</td>
+<td>New York</td>
+<td>STATE MOTTOES</td>
+<td>"Excelsior" ("Ever Upward")</td>
+<td>Jeopardy!</td>
+<td>4534</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>146113</th>
+<td>2006-03-28</td>
+<td>New York</td>
+<td>GODZILLA</td>
+<td>Apparently bored with his old conquests, in the 1998 version, Godzilla is intent on destroying this metropolis</td>
+<td>Double Jeopardy!</td>
+<td>4967</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>147556</th>
+<td>2011-03-03</td>
+<td>New York</td>
+<td>TV CITY SETTINGS</td>
+<td>"Castle"</td>
+<td>Double Jeopardy!</td>
+<td>6099</td>
+<td>1600.0</td>
+</tr>
+<tr>
+<th>15213</th>
+<td>2008-02-27</td>
+<td>New York</td>
+<td>EARLY AMERICA</td>
+<td>The British took New Netherland & New Amsterdam from the Dutch in 1664 & renamed them both this</td>
+<td>Jeopardy!</td>
+<td>5408</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>152854</th>
+<td>2011-05-03</td>
+<td>New York</td>
+<td>HERE LIES...</td>
+<td>Boss Tweed</td>
+<td>Double Jeopardy!</td>
+<td>6142</td>
+<td>1200.0</td>
+</tr>
+<tr>
+<th>160620</th>
+<td>2006-12-18</td>
+<td>New York</td>
+<td>'ALLO, GOVERNOR</td>
+<td>In office from 1995:George Pataki</td>
+<td>Double Jeopardy!</td>
+<td>5126</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>18477</th>
+<td>2006-07-25</td>
+<td>New York</td>
+<td>DO YOU HAVE A RESERVATION?</td>
+<td>Oneida & St. Regis Mohawk</td>
+<td>Double Jeopardy!</td>
+<td>5052</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>192035</th>
+<td>2011-12-06</td>
+<td>New York</td>
+<td>THE STORY OF O. HENRY</td>
+<td>In 1910 O. Henry died in this "Bagdad on the Subway", the setting for many of his stories</td>
+<td>Double Jeopardy!</td>
+<td>6262</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>194159</th>
+<td>2007-01-31</td>
+<td>New York</td>
+<td>PRESIDENTIAL HITCHING POSTS</td>
+<td>Martin & Hannah Van Buren, on Feb. 21, 1807</td>
+<td>Double Jeopardy!</td>
+<td>5158</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>195140</th>
+<td>2010-05-27</td>
+<td>New York</td>
+<td>STATES' FORMER GOVERNORS</td>
+<td>Thomas Dewey, 1943-1954</td>
+<td>Jeopardy!</td>
+<td>5929</td>
+<td>1000.0</td>
+</tr>
+<tr>
+<th>203523</th>
+<td>2011-11-28</td>
+<td>New York</td>
+<td>A TALE OF ONE CITY</td>
+<td>Jay McInerney's "Bright Lights, Big City"</td>
+<td>Double Jeopardy!</td>
+<td>6256</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>209051</th>
+<td>2006-04-20</td>
+<td>New York</td>
+<td>STATE OF THE U.S. REPRESENTATIVE</td>
+<td>Charles Rangel,Sherwood Boehlert,Carolyn McCarthy</td>
+<td>Double Jeopardy!</td>
+<td>4984</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>22074</th>
+<td>2011-04-29</td>
+<td>New York</td>
+<td>STATE PARKS</td>
+<td>Catskill State Park</td>
+<td>Jeopardy!</td>
+<td>6140</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>22289</th>
+<td>2010-06-24</td>
+<td>New York</td>
+<td>STATE THE STATE OF THE GOVERNOR</td>
+<td>David Paterson</td>
+<td>Double Jeopardy!</td>
+<td>5949</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>23742</th>
+<td>2010-07-20</td>
+<td>New York</td>
+<td>STATE LAKES</td>
+<td>Lake Peekskill</td>
+<td>Double Jeopardy!</td>
+<td>5967</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>36753</th>
+<td>2004-05-28</td>
+<td>New York</td>
+<td>STATES' MEN</td>
+<td>Jerry Seinfeld &Jerry Stiller</td>
+<td>Jeopardy!</td>
+<td>4555</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>4565</th>
+<td>2008-07-22</td>
+<td>New York</td>
+<td>NEBRASKA, NEW YORK OR NORTH DAKOTA</td>
+<td>Its name does not have a Native American origin</td>
+<td>Jeopardy!</td>
+<td>5512</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>46877</th>
+<td>2009-05-12</td>
+<td>New York</td>
+<td>CITIES' NEWER NAMES</td>
+<td>New Amsterdam</td>
+<td>Jeopardy!</td>
+<td>5692</td>
+<td>600.0</td>
+</tr>
+<tr>
+<th>47873</th>
+<td>2011-04-21</td>
+<td>New York</td>
+<td>STATE / PRISON</td>
+<td>Attica! & Southport Correctional Facility!</td>
+<td>Jeopardy!</td>
+<td>6134</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>47935</th>
+<td>2007-01-23</td>
+<td>New York</td>
+<td>THE LARGEST U.S. STATE</td>
+<td>New Jersey,New Hampshire,New York</td>
+<td>Jeopardy!</td>
+<td>5152</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>54652</th>
+<td>2009-09-14</td>
+<td>New York</td>
+<td>STATES' FORMER CAPITALS</td>
+<td>Poughkeepsie</td>
+<td>Jeopardy!</td>
+<td>5746</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>57123</th>
+<td>2005-06-09</td>
+<td>New York</td>
+<td>NASCAR GEOGRAPHY</td>
+<td>Watkins Glen International</td>
+<td>Jeopardy!</td>
+<td>4794</td>
+<td>1000.0</td>
+</tr>
+<tr>
+<th>64453</th>
+<td>2009-07-08</td>
+<td>New York</td>
+<td>TO THE LIGHTHOUSE</td>
+<td>Fire Island Light,Buffalo Light</td>
+<td>Jeopardy!</td>
+<td>5733</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>8370</th>
+<td>2005-05-31</td>
+<td>New York</td>
+<td>'ALLO, GOVERNOR!</td>
+<td>Al Smith,Mario Cuomo</td>
+<td>Jeopardy!</td>
+<td>4787</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>84169</th>
+<td>2004-10-15</td>
+<td>New York</td>
+<td>LICENSE PLATE SLOGANS</td>
+<td>It has used "Empire State" & the more formal "The Empire State"</td>
+<td>Jeopardy!</td>
+<td>4625</td>
+<td>400.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [71]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># How many of these are there?</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'city'</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span> 
+   <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'state'</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span><span class="p">)][</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[71]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>32</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A few questions jump out at me as referring to New York city rather than New York state.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [62]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'Godzilla'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[62]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>146113</th>
+<td>2006-03-28</td>
+<td>New York</td>
+<td>GODZILLA</td>
+<td>Apparently bored with his old conquests, in the 1998 version, Godzilla is intent on destroying this metropolis</td>
+<td>Double Jeopardy!</td>
+<td>4967</td>
+<td>800.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [63]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'Castle'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[63]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>147556</th>
+<td>2011-03-03</td>
+<td>New York</td>
+<td>TV CITY SETTINGS</td>
+<td>"Castle"</td>
+<td>Double Jeopardy!</td>
+<td>6099</td>
+<td>1600.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [66]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">"New Amsterdam"</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>15213</th>
+<td>2008-02-27</td>
+<td>New York</td>
+<td>EARLY AMERICA</td>
+<td>The British took New Netherland & New Amsterdam from the Dutch in 1664 & renamed them both this</td>
+<td>Jeopardy!</td>
+<td>5408</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>46877</th>
+<td>2009-05-12</td>
+<td>New York</td>
+<td>CITIES' NEWER NAMES</td>
+<td>New Amsterdam</td>
+<td>Jeopardy!</td>
+<td>5692</td>
+<td>600.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [64]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'Lights'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[64]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>203523</th>
+<td>2011-11-28</td>
+<td>New York</td>
+<td>A TALE OF ONE CITY</td>
+<td>Jay McInerney's "Bright Lights, Big City"</td>
+<td>Double Jeopardy!</td>
+<td>6256</td>
+<td>800.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That only comes to about 5 more questions.</p>
+<p>So far we've looked at questions where the answer is "New York" and the questions either</p>
+<ul>
+<li>contains "city"
+or</li>
+<li>does not contain "city" and does not contain "state".</li>
+</ul>
+<p>Maybe there are some questions that mention "state" in the question, but are really asking about the city. That would seem odd. Let's check a few.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [73]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Find questions where "New York" is the answer and "state" appears in the question.</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'New York'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'state'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>103063</th>
+<td>2005-12-26</td>
+<td>New York</td>
+<td>STATE OF THE UNION</td>
+<td>Numerous Revolutionary War battles were fought in this state</td>
+<td>Jeopardy!</td>
+<td>4901</td>
+<td>600.0</td>
+</tr>
+<tr>
+<th>10846</th>
+<td>2005-05-02</td>
+<td>New York</td>
+<td>STATE FIRSTS</td>
+<td>In 2001 it became the first U.S. state to ban hand-held phone use while driving</td>
+<td>Jeopardy!</td>
+<td>4766</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>113096</th>
+<td>2008-10-29</td>
+<td>New York</td>
+<td>2008</td>
+<td>Though not elected to the position, a man from this state became the 1st blind governor & the 4th black governor in the U.S.</td>
+<td>Final Jeopardy!</td>
+<td>5553</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>122754</th>
+<td>2007-04-12</td>
+<td>New York</td>
+<td>GOVERNORS</td>
+<td>Of the 17 state governors who became president, the most from any state, 4, were from this one</td>
+<td>Final Jeopardy!</td>
+<td>5209</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1308</th>
+<td>2006-02-13</td>
+<td>New York</td>
+<td>THE 50 STATES</td>
+<td>Since 1776, it has been the only U.S. state to be the most populous state for more than a century</td>
+<td>Final Jeopardy!</td>
+<td>4936</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>136225</th>
+<td>2006-10-03</td>
+<td>New York</td>
+<td>STATE GOVERNORS</td>
+<td>Hamilton Fish, Enos T. Throop & George Pataki have served as governors of this state</td>
+<td>Jeopardy!</td>
+<td>5072</td>
+<td>1000.0</td>
+</tr>
+<tr>
+<th>143265</th>
+<td>2011-06-21</td>
+<td>New York</td>
+<td>STATE THE SENATOR</td>
+<td>In 2009 the woman pictured here ended her service to this state</td>
+<td>Jeopardy!</td>
+<td>6177</td>
+<td>200.0</td>
+</tr>
+<tr>
+<th>145857</th>
+<td>2006-02-07</td>
+<td>New York</td>
+<td>TRAVEL FUN</td>
+<td>Eek!  Watch out for monsters at the House of Frankenstein Wax Museum in Lake George in this state</td>
+<td>Jeopardy!</td>
+<td>4932</td>
+<td>1000.0</td>
+</tr>
+<tr>
+<th>158219</th>
+<td>2010-03-03</td>
+<td>New York</td>
+<td>APPLE SAUCE</td>
+<td>Washington State produces more apples than any other state; this state where the Empire apple developed is 2nd</td>
+<td>Jeopardy!</td>
+<td>5868</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>15900</th>
+<td>2010-06-21</td>
+<td>New York</td>
+<td>OTHER GRAND CANYONS</td>
+<td>Just south of Rochester in this state, Letchworth State Park is home to the "Grand Canyon of the East"</td>
+<td>Double Jeopardy!</td>
+<td>5946</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>1677</th>
+<td>2008-12-05</td>
+<td>New York</td>
+<td>STATE OF THE UNION</td>
+<td>When Jimi Hendrix played "The Star-Spangled Banner" at Woodstock, he was strumming in this state</td>
+<td>Jeopardy!</td>
+<td>5580</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>19907</th>
+<td>2010-11-19</td>
+<td>New York</td>
+<td>JOURNALISM</td>
+<td>A "lockout" is an identifier like "Joe Smith, WTI Radio, Schenectady," this state</td>
+<td>Double Jeopardy!</td>
+<td>6025</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>206195</th>
+<td>2009-11-04</td>
+<td>New York</td>
+<td>THE U.S. ARMY</td>
+<td>Opened in 1802, the U.S. Army's military academy is at West Point in this state</td>
+<td>Double Jeopardy!</td>
+<td>5783</td>
+<td>1200.0</td>
+</tr>
+<tr>
+<th>209270</th>
+<td>2004-04-12</td>
+<td>New York</td>
+<td>CONGRESSIONAL RECORD</td>
+<td>Herman Badillo, the first Puerto Rican elected to the House, was elected by this state in 1970</td>
+<td>Double Jeopardy!</td>
+<td>4521</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>28000</th>
+<td>2006-03-10</td>
+<td>New York</td>
+<td>23 SKIDOO</td>
+<td>Governor Al Smith of this state signed a repeal of the state's Prohibition Enforcement Act, angering the feds</td>
+<td>Jeopardy!</td>
+<td>4955</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>33102</th>
+<td>2011-03-10</td>
+<td>New York</td>
+<td>20th CENTURY PRESIDENTIAL ELECTIONS</td>
+<td>The last time the Democratic & Republican nominees had once been governor of the same state, this was the state</td>
+<td>Final Jeopardy!</td>
+<td>6104</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>46544</th>
+<td>2005-01-24</td>
+<td>New York</td>
+<td>JOSE CAN YOU SEE</td>
+<td>Born in Puerto Rico, U.S. Congressman Jose Serrano represents a district in this Eastern state</td>
+<td>Double Jeopardy!</td>
+<td>4696</td>
+<td>1200.0</td>
+</tr>
+<tr>
+<th>54571</th>
+<td>2007-05-07</td>
+<td>New York</td>
+<td>SPRING BREAK!</td>
+<td>On April 17 this state enjoys Verrazano Day</td>
+<td>Double Jeopardy!</td>
+<td>5226</td>
+<td>2000.0</td>
+</tr>
+<tr>
+<th>56399</th>
+<td>2006-03-15</td>
+<td>New York</td>
+<td>I'LL HAVE THE BEEF</td>
+<td>The boneless top loin muscle is called Kansas City steak or by this name of the state</td>
+<td>Jeopardy!</td>
+<td>4958</td>
+<td>600.0</td>
+</tr>
+<tr>
+<th>57026</th>
+<td>2005-09-12</td>
+<td>New York</td>
+<td>BATTLE STATIONS</td>
+<td>The Revolutionary War's Battle of Bennington was not fought in Vermont, but in this neighboring state</td>
+<td>Double Jeopardy!</td>
+<td>4826</td>
+<td>1600.0</td>
+</tr>
+<tr>
+<th>69464</th>
+<td>2007-05-22</td>
+<td>New York</td>
+<td>NEW FACES IN THE 110th CONGRESS</td>
+<td>Ex-rocker John Hall (of the band Orleans, not & Oates) now reps this states's 19th, including Peekskill</td>
+<td>Jeopardy!</td>
+<td>5237</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>86876</th>
+<td>2004-07-22</td>
+<td>New York</td>
+<td>FORMER CAPITALS</td>
+<td>This state didn't keepsie Poughkeepsie as its capital for very long</td>
+<td>Double Jeopardy!</td>
+<td>4594</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>89449</th>
+<td>2005-10-24</td>
+<td>New York</td>
+<td>A STATE OF CIVIL WAR</td>
+<td>This Northern state had draft riots in July 1863 even as its industrial output exceeded that of the entire South</td>
+<td>Double Jeopardy!</td>
+<td>4856</td>
+<td>400.0</td>
+</tr>
+<tr>
+<th>92750</th>
+<td>2011-07-25</td>
+<td>New York</td>
+<td>U.S. COUNTIES</td>
+<td>Oneida county, Idaho was named for the lake Oneida area in this state from which many of the early settlers emigrated</td>
+<td>Double Jeopardy!</td>
+<td>6201</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>93430</th>
+<td>2005-11-04</td>
+<td>New York</td>
+<td>PRECIOUS METALS</td>
+<td>The largest single accumulation of gold known, about $90 billion from several countries, is found in this U.S. state</td>
+<td>Final Jeopardy!</td>
+<td>4865</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>95071</th>
+<td>2010-02-16</td>
+<td>New York</td>
+<td>SEWARD'S FOLLIES</td>
+<td>Before his time on the national stage, Seward was born in, attended Union College in & was governor of this state</td>
+<td>Jeopardy!</td>
+<td>5857</td>
+<td>1000.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hmm... All of these really seem to be asking about the state, rather than the city of New York.</p>
+<p>To summarize, I found that about 17 questions should be removed from the count for New York state. That gives 53.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [74]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Update value for New York.</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s1">'New York'</span><span class="p">,</span> <span class="s1">'total_count'</span><span class="p">,</span> <span class="mi">53</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [76]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create plot again.</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">'total_count'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">'wiki_views'</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">'scatter'</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAacAAAEQCAYAAAAUILtVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XucldV97/HPFwQZURAs4hF1wChekljFF2hq0gwEvKR9
+GdM0CqeJ2EzPSaJtbHoLJKcBT9pXgm0ak7aoOaHx0ggYzcWeWiFUpkl7NKASsQGRxsxUiMJEhVZL
+Isrv/PGsgYdhLnvP7Mszs7/v12u/fPbaz2XtJ5P9Y631e9ZSRGBmZlYkI+pdATMzs+4cnMzMrHAc
+nMzMrHAcnMzMrHAcnMzMrHAcnMzMrHBqEpwkjZf0dUlbJf1Q0kWSJkhaK2mbpDWSxuf2Xyxpe9r/
+0lz5DEmbJT0j6ZZc+WhJq9Ixj0g6LffZwrT/NknX5sqnSno0fbZS0lG1uBdmZta/WrWcvgg8GBHn
+AL8IPA0sAtZFxFnAw8BiAEnnAlcD5wBXAMslKZ3nVqA1IqYD0yVdlspbgZci4kzgFuDmdK4JwKeB
+mcBFwJJcEFwGfD6da086h5mZFUDVg5OkccA7IuKrABHxekTsBd4D3Jl2uxO4Km1fCaxK+7UD24FZ
+kk4CjouIjWm/u3LH5M91HzAnbV8GrI2IvRGxB1gLXJ4+mwPcn7v+eyv0lc3MbJBq0XKaBvxU0lcl
+PSHpy5KOASZHxC6AiHgBODHtPwV4Lnf8zlQ2BdiRK9+Ryg47JiLeAPZKmtjbuSSdALwcEQdy5zq5
+It/WzMwGrRbB6ShgBvDXETEDeJWsS6/7vEmVnEdJ/e9S0j5mZlYHtUgC2AE8FxGPpff3kwWnXZIm
+R8Su1GW3O32+Ezg1d/wpqay38vwxP5E0EhgXES9J2gm0dDtmfUS8mJI0RqTWU/5ch5HkyQfNzAYg
+IgbcCKh6yyl13T0naXoqehfwQ+AB4LpUthD4dtp+AJifMvCmAWcAG1LX315Js1KCxLXdjlmYtt9P
+lmABsAaYlwLRBGBeKgNYn/btfv2evoNfESxZsqTudSjKy/fC98L3ou/XYNUqffpjwNckjQKeBX4T
+GAncK+lDQAdZhh4RsUXSvcAWYD9wfRz6pjcAdwBjyLL/HkrlK4C7JW0HXgTmp3O9LOkzwGNk3YY3
+RZYYAVnrbVX6fFM6h5mZFUBNglNEPEmWzt3d3F72/yzw2R7KHwfe2kP5z0nBrYfP7iALaN3Lf0yW
+Xm5mZgXjGSKsZC0tLfWuQmH4Xhzie3GI70XlqBJ9g8OZpPA9MjMrjySiyAkRZmZm5XJwMjOzwnFw
+MjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOz
+wnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFw
+MjOzwnFwMjOzwnFwMjOzwnFwMjOzwnFwMjOzwqlJcJLULulJSZskbUhlEyStlbRN0hpJ43P7L5a0
+XdJWSZfmymdI2izpGUm35MpHS1qVjnlE0mm5zxam/bdJujZXPlXSo+mzlZKOqv6dMDOzUtSq5XQA
+aImICyJiVipbBKyLiLOAh4HFAJLOBa4GzgGuAJZLUjrmVqA1IqYD0yVdlspbgZci4kzgFuDmdK4J
+wKeBmcBFwJJcEFwGfD6da086h5mZFUCtgpN6uNZ7gDvT9p3AVWn7SmBVRLweEe3AdmCWpJOA4yJi
+Y9rvrtwx+XPdB8xJ25cBayNib0TsAdYCl6fP5gD3567/3kF9QzOzAuvs7GTjxo10dnbWuyolqVVw
+CuA7kjZK+q1UNjkidgFExAvAial8CvBc7tidqWwKsCNXviOVHXZMRLwB7JU0sbdzSToBeDkiDuTO
+dfKgv6WZWQGtXLma5uazmTfvIzQ3n83KlavrXaV+1Wqc5ZKIeF7SJGCtpG1kASuv+/vBUP+7lLSP
+mdmQ1tnZSWvr9ezbt559+84DNtPaOpu5c+cwadKkelevVzUJThHxfPpvp6RvAbOAXZImR8Su1GW3
+O+2+Ezg1d/gpqay38vwxP5E0EhgXES9J2gm0dDtmfUS8KGm8pBGp9ZQ/1xGWLl16cLulpYWWlpbe
+djUzK5T29nZGj56aAhPAeYwa1Ux7e3tFg1NbWxttbW0VO58iKtlg6eEC0jHAiIh4RdJYsnGfm4B3
+kSUxLJP0CWBCRCxKCRFfI0tgmAJ8BzgzIkLSo8DHgI3A3wNfioiHJF0PvCUirpc0H7gqIuanhIjH
+gBlkXZiPARdGxB5Jq4FvRMRqSbcCT0bEbT3UP6p9j8zMqqWzs5Pm5rPZt289kLWcmppm09HxdFVb
+TpKIiAH3UNWi5TQZ+KakSNf7WkSslfQYcK+kDwEdZBl6RMQWSfcCW4D9wPW56HADcAcwBngwIh5K
+5SuAuyVtB14E5qdzvSzpM2RBKYCbUmIEZNmCq9Lnm9I5zMyGlUmTJrFixXJaW2czalQz+/d3sGLF
+8kJ36UENWk5DnVtOZjYcdHZ20t7eztSpU2sSmAbbcnJw6oeDk5lZ+QYbnDx9kZmZFY6Dk5mZFY6D
+k5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZ
+FY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6D
+k5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFY6Dk5mZFU7NgpOkEZKekPRAej9B0lpJ
+2yStkTQ+t+9iSdslbZV0aa58hqTNkp6RdEuufLSkVemYRySdlvtsYdp/m6Rrc+VTJT2aPlsp6ajq
+3wUzMytFLVtONwJbcu8XAesi4izgYWAxgKRzgauBc4ArgOWSlI65FWiNiOnAdEmXpfJW4KWIOBO4
+Bbg5nWsC8GlgJnARsCQXBJcBn0/n2pPOYWZmBVCT4CTpFODdwFdyxe8B7kzbdwJXpe0rgVUR8XpE
+tAPbgVmSTgKOi4iNab+7csfkz3UfMCdtXwasjYi9EbEHWAtcnj6bA9yfu/57B/s9zcysMmrVcvoC
+8IdA5MomR8QugIh4ATgxlU8BnsvttzOVTQF25Mp3pLLDjomIN4C9kib2di5JJwAvR8SB3LlOHswX
+NDOzyqn6OIukXwF2RcQPJLX0sWv08VnZl63QPgAsXbr04HZLSwstLS3l18jMbBhra2ujra2tYuer
+RRLAJcCVkt4NNAHHSbobeEHS5IjYlbrsdqf9dwKn5o4/JZX1Vp4/5ieSRgLjIuIlSTuBlm7HrI+I
+FyWNlzQitZ7y5zpCPjiZmdmRuv/D/aabbhrU+arerRcRn4yI0yLidGA+8HBEfBD4O+C6tNtC4Ntp
++wFgfsrAmwacAWxIXX97Jc1KCRLXdjtmYdp+P1mCBcAaYF4KRBOAeakMYH3at/v1zcyszuqZPv05
+4F5JHwI6yDL0iIgtku4ly+zbD1wfEV1dfjcAdwBjgAcj4qFUvgK4W9J24EWyIEhEvCzpM8BjZN2G
+N6XECMiyBVelzzelc5iZWQHo0O++9URS+B6ZmZVHEhFR8th+d54hwszMCsfByczMCsfByczMCsfB
+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
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [77]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Check with a correlation matrix again.</span>
+<span class="n">state_data</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span><span class="n">state_data</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>total_count</th>
+<th>wiki_word_count</th>
+<th>wiki_views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>total_count</th>
+<td>1.000000</td>
+<td>0.358244</td>
+<td>0.823737</td>
+</tr>
+<tr>
+<th>wiki_word_count</th>
+<td>0.358244</td>
+<td>1.000000</td>
+<td>0.350184</td>
+</tr>
+<tr>
+<th>wiki_views</th>
+<td>0.823737</td>
+<td>0.350184</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The plot looks a little better, but the correlation matrix value relating wikipedia views and total_counts (0.821448) didn't get much better.</p>
+<p>It seems like Jeopardy may place more importance on the state of New York than wikipedia users. :)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">Oklahoma is OK! Oklahoma City isn't confused with the state of Oklahoma.<a class="anchor-link" href="#Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">¶</a></h3><p>Another state with a possibly confusing state capital is Oklahoma City, also the most populous city in the state. However, Oklahoma City doesn't have the same problems as New York City. Unlike New York where all of the questions where "city" is mentioned refer to New York City, for Oklahoma the questions where city is mentioned all refer to another city in the state of Oklahoma, rather than Oklahoma City.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Here are the questions where Oklahoma is the answer and "city" is mentioned in the question.</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Oklahoma'</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'city'</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>air_date</th>
+<th>answer</th>
+<th>category</th>
+<th>question</th>
+<th>round</th>
+<th>show_number</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>115027</th>
+<td>2010-09-21</td>
+<td>Oklahoma</td>
+<td>WOMEN ON THE MAP</td>
+<td>The city of Enid in this state is believed to be named for a character in "Idylls of the King"</td>
+<td>Jeopardy!</td>
+<td>5982</td>
+<td>800.0</td>
+</tr>
+<tr>
+<th>127770</th>
+<td>2010-11-15</td>
+<td>Oklahoma</td>
+<td>STATE FACTS</td>
+<td>The city of Tahlequah in this state is the capital of the Cherokee Nation</td>
+<td>Jeopardy!</td>
+<td>6021</td>
+<td>1000.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://twitter.com/AndreaUrbanPhD"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+                <li class="list-group-item"><a href="http://www.linkedin.com/in/andrea-urban-phd"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/aurban8"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Andrea Urban
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://aurban8.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://aurban8.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://aurban8.github.io/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
