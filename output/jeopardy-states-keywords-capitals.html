@@ -1242,29 +1242,10 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's compare the number of questions for the following cases</p>
-<p>A) the state is the answer and the capital appears in the question</p>
-<p>and</p>
-<p>B) the capital appears as the answer and the state appears in the question.</p>
-<table>
-<thead><tr>
-<th>Case</th>
-<th>Question contains</th>
-<th>Answer contains</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>capital</td>
-<td>state</td>
-</tr>
-<tr>
-<td>B</td>
-<td>state</td>
-<td>capital</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>Case A) Question contains the capital. Answer contains the state.</li>
+<li>Case B) Question contains the state.   Answer contains the capital.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1534,29 +1515,26 @@ mVmTcgIwM2tSTgBmZk3q/wMJzgoh8oj93QAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The blue line shows the one-to-one line. If the points were all along this line then there would be just as many questions in Case A as Case B.</p>
 <p>Therefore, it looks like the results for Arizona hold, in general, for the rest of states, with only three outliers. A question is more likely to contain the state's name and expect the capital city as an answer, rather than vice versa.</p>
-<table>
-<thead><tr>
-<th>Case</th>
-<th>Question contains</th>
-<th>Answer contains</th>
-<th>average count</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>capital</td>
-<td>state</td>
-<td>1.7</td>
-</tr>
-<tr>
-<td>B</td>
-<td>state</td>
-<td>capital</td>
-<td>6.26</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Case A) Question contains the capital. Answer contains the state.  Average count per state is 0.68</li>
+<li>Case B) Question contains the state.   Answer contains the capital. Average count per state is 2.18</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>By the way, those outliers are...</p>
 </div>
 </div>
