@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>States and Their Popularity from Wikipedia Views in the Jeopardy Dataset - Andrea's First Website</title>
+    <title>Jeopardy! - Part 3: U.S. States and Their Popularity from Wikipedia Views - Andrea's First Website</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,17 +9,17 @@
 
 
 
-<link rel="canonical" href="https://aurban8.github.io/jeopardy-states-wikipedia.html">
+<link rel="canonical" href="https://aurban8.github.io/jeopardy-3-states-wikipedia.html">
 
         <meta name="author" content="Andrea Urban" />
         <meta name="keywords" content="jeopardy" />
-        <meta name="description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity." />
+        <meta name="description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity. What&#39;s the difference between New York City and New York State? Last time, I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn&#39;t find much of a relationship. Here, I want to investigate whether the frequency of a state&#39;s appearance is related to its popularity. I&#39;m going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity. /*! * * IPython notebook * */.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode …" />
 
         <meta property="og:site_name" content="Andrea's First Website" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="States and Their Popularity from Wikipedia Views in the Jeopardy Dataset"/>
-        <meta property="og:url" content="https://aurban8.github.io/jeopardy-states-wikipedia.html"/>
-        <meta property="og:description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity."/>
+        <meta property="og:title" content="Jeopardy! - Part 3: U.S. States and Their Popularity from Wikipedia Views"/>
+        <meta property="og:url" content="https://aurban8.github.io/jeopardy-3-states-wikipedia.html"/>
+        <meta property="og:description" content="Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity. What&#39;s the difference between New York City and New York State? Last time, I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn&#39;t find much of a relationship. Here, I want to investigate whether the frequency of a state&#39;s appearance is related to its popularity. I&#39;m going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity. /*! * * IPython notebook * */.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode …"/>
         <meta property="article:published_time" content="2017-03-22" />
             <meta property="article:section" content="Blog" />
             <meta property="article:tag" content="jeopardy" />
@@ -80,10 +80,10 @@ Andrea's First Website            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://aurban8.github.io/jeopardy-states-wikipedia.html"
+                    <a href="https://aurban8.github.io/jeopardy-3-states-wikipedia.html"
                        rel="bookmark"
-                       title="Permalink to States and Their Popularity from Wikipedia Views in the Jeopardy Dataset">
-                        States and Their Popularity from Wikipedia Views in the Jeopardy Dataset
+                       title="Permalink to Jeopardy! - Part 3: U.S. States and Their Popularity from Wikipedia Views">
+                        Jeopardy! - Part 3: U.S. States and Their Popularity from Wikipedia Views
                     </a>
                 </h1>
             </header>
@@ -105,7 +105,9 @@ Andrea's First Website            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <style type="text/css">/*!
+                <p><em>Wikipedia is used to trace popularity. <a href="#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">Article word count does not correlate with Jeopardy popularity.</a> However, <a href="#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">wikipedia pages views do correlate with Jeopardy popularity.</a> What's the difference between <a href="#New-York-City-or-New-York-State?">New York City and New York State?</a></em></p>
+<p><a href="https://aurban8.github.io/jeopardy-2-states-dollar.html">Last time</a>, I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn't find much of a relationship. Here, I want to investigate whether the frequency of a state's appearance is related to its <em>popularity</em>. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.</p>
+<style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -184,21 +186,6 @@ Andrea's First Website            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Last time, I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn't find much of a relationship. Here, I want to investigate whether the frequency of a state's appearance is related to its <em>popularity</em>. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.</p>
-<p>Here's a reminder of the <a href="https://www.reddit.com/r/datasets/comments/1uyd0t/200000_jeopardy_questions_in_a_json_file/">Jeopardy data set</a></p>
-<p>File format:</p>
-<blockquote><p>The json file is an unordered list of questions where each question has</p>
-<p>'category' : the question category, e.g. "HISTORY"</p>
-<p>'value' : Dollar value of the question as string, e.g. "$200"
-Note: This is "None" for Final Jeopardy! and Tiebreaker questions</p>
-<p>'question' : text of question
-Note: This sometimes contains hyperlinks and other things messy text such as when there's a picture or video question</p>
-<p>'answer' : text of answer</p>
-<p>'round' : one of "Jeopardy!","Double Jeopardy!","Final Jeopardy!" or "Tiebreaker"
-Note: Tiebreaker questions do happen but they're very rare (like once every 20 years)</p>
-<p>'show_number' : string of show number, e.g '4680'</p>
-<p>'air_date' : the show air date in format YYYY-MM-DD</p>
-</blockquote>
 <h2 id="Let's-load-in-the-data-and-limit-the-time-period.">Let's load in the data and limit the time period.<a class="anchor-link" href="#Let's-load-in-the-data-and-limit-the-time-period.">¶</a></h2>
 </div>
 </div>
@@ -304,7 +291,16 @@ Note: Tiebreaker questions do happen but they're very rare (like once every 20 y
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">Wikipedia article word counts don't trace Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">¶</a></h2><p>In order to answer the question of why some states appear as Jeopardy answers more frequently than others I decided to use wikipedia as a proxy for popularity. I first tried looking into word counts on a state's wikipedia article. I was thinking that possibly state's that are more popular or more interesting will have longer articles written about them. Let's see what that shows.</p>
+<h2 id="Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">Wikipedia article word counts don't trace Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to answer the question of why some states appear as Jeopardy answers more frequently than others I decided to use wikipedia as a proxy for popularity. I first tried looking into word counts on a state's wikipedia article. I was thinking that possibly state's that are more popular or more interesting will have longer articles written about them. Let's see what that shows.</p>
 </div>
 </div>
 </div>
@@ -816,7 +812,16 @@ Obxkn9ALAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">Wikipedia page views is a good tracer of Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">¶</a></h2><p>Rather than wikipedia word count, perhaps an alternative indicator of popularity is <em>wikipedia page views</em>. Luckily there is <a href="https://github.com/mediawiki-utilities/python-mwviews">another python tool which uses wikipedia's API to get page views</a>. To install it, use <code>pip install mwviews</code></p>
+<h2 id="Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">Wikipedia page views is a good tracer of Jeopardy popularity.<a class="anchor-link" href="#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Rather than wikipedia word count, perhaps an alternative indicator of popularity is <em>wikipedia page views</em>. Luckily there is <a href="https://github.com/mediawiki-utilities/python-mwviews">another python tool which uses wikipedia's API to get page views</a>. To install it, use <code>pip install mwviews</code></p>
 </div>
 </div>
 </div>
@@ -1277,7 +1282,16 @@ WeE4OJmZWeE4OJmZWeE4OJmZWeH8f4o7VS4Sx1qyAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="New-York-City-or-New-York-State?">New York City or New York State?<a class="anchor-link" href="#New-York-City-or-New-York-State?">¶</a></h2><p>What is that odd outlier located at <code>total_count</code> of about 70 and <code>wiki_views</code> under 1,000,000? It looks like its <code>total_count</code> value should be at least 30, or 40 less than it currently is.</p>
+<h2 id="New-York-City-or-New-York-State?">New York City or New York State?<a class="anchor-link" href="#New-York-City-or-New-York-State?">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is that odd outlier located at <code>total_count</code> of about 70 and <code>wiki_views</code> under 1,000,000? It looks like its <code>total_count</code> value should be at least 30, or 40 less than it currently is.</p>
 </div>
 </div>
 </div>
@@ -2703,7 +2717,16 @@ zKxwHJzMzKxwHJzMzKxwHJzMzKxw/j8k5lUu9lS19gAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">Oklahoma is OK! Oklahoma City isn't confused with the state of Oklahoma.<a class="anchor-link" href="#Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">¶</a></h3><p>Another state with a possibly confusing state capital is Oklahoma City, also the most populous city in the state. However, Oklahoma City doesn't have the same problems as New York City. Unlike New York where all of the questions where "city" is mentioned refer to New York City, for Oklahoma the questions where city is mentioned all refer to another city in the state of Oklahoma, rather than Oklahoma City.</p>
+<h3 id="Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">Oklahoma is OK! Oklahoma City isn't confused with the state of Oklahoma.<a class="anchor-link" href="#Oklahoma-is-OK!-Oklahoma-City-isn't-confused-with-the-state-of-Oklahoma.">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another state with a possibly confusing state capital is Oklahoma City, also the most populous city in the state. However, Oklahoma City doesn't have the same problems as New York City. Unlike New York where all of the questions where "city" is mentioned refer to New York City, for Oklahoma the questions where city is mentioned all refer to another city in the state of Oklahoma, rather than Oklahoma City.</p>
 </div>
 </div>
 </div>
@@ -2765,6 +2788,14 @@ zKxwHJzMzKxwHJzMzKxwHJzMzKxw/j8k5lUu9lS19gAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+</div>
+</div>
+</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -2793,6 +2824,9 @@ zKxwHJzMzKxwHJzMzKxwHJzMzKxw/j8k5lUu9lS19gAAAABJRU5ErkJggg==
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
+
+
+<p>In my <a href="https://aurban8.github.io/jeopardy-states-keywords-capitals.html">next post</a> I'll look at keywords for the states. </p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -2804,8 +2838,8 @@ zKxwHJzMzKxwHJzMzKxwHJzMzKxw/j8k5lUu9lS19gAAAABJRU5ErkJggg==
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'andreaurban-com.disqus.com'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'jeopardy-states-wikipedia';
-                var disqus_url = 'https://aurban8.github.io/jeopardy-states-wikipedia.html';
+                    var disqus_identifier = 'jeopardy-3-states-wikipedia';
+                var disqus_url = 'https://aurban8.github.io/jeopardy-3-states-wikipedia.html';
 
             var disqus_config = function () {
                 this.language = "en";
