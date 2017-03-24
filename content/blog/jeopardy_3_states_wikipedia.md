@@ -10,6 +10,12 @@ Authors: Andrea Urban
 [Last time]({filename}./jeopardy_2_states_values.md), I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. I didn't find much of a relationship. Here, I want to investigate whether the frequency of a state's appearance is related to its *popularity*. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.
 
 
-{% notebook notebooks/jeopardy_3_states_wikipedia.ipynb %}
+{% notebook notebooks/jeopardy_3_states_wikipedia.ipynb cells[0:29] %}
+
+<center> ![Marvin Berry calling his cousin Chuck, https://m.popkey.co/f28ada/yY6Jw.gif]({filename}/images/chuckberry.gif) </center>
+
+{% notebook notebooks/jeopardy_3_states_wikipedia.ipynb cells[29:] %}
 
 In my [next post]({filename}./jeopardy_4_states_keywords_capitals.md) I'll look at keywords for the states. 
+
+
