@@ -55,15 +55,13 @@ JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 #NOTEBOOK_DIR = 'notebooks'
 
 #BOOTSTRAP_THEME = 'spacelab'
+#BOOTSTRAP_THEME = 'cosmo'
+BOOTSTRAP_THEME = 'simplex'
 
 STATIC_PATHS = ['images']#, notebook]
 
 PYGMENTS_STYLE = 'emacs'
 
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
-
-GOOGLE_ANALYTICS = 'UA-96111083-1'
-
-DISQUS_SITENAME = 'andreaurban-com.disqus.com'
 
 SUMMARY_MAX_LENGTH = 200

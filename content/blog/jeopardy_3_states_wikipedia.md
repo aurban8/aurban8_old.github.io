@@ -16,6 +16,4 @@ Authors: Andrea Urban
 
 {% notebook notebooks/jeopardy_3_states_wikipedia.ipynb cells[29:] %}
 
-In my [next post]({filename}./jeopardy_4_states_keywords_capitals.md) I'll look at keywords for the states. 
-
-
+All the code in this blog post can be found in a [jupyter notebook on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_3_states_wikipedia.ipynb){:target="_blank"}.In my [next post]({filename}./jeopardy_4_states_keywords_capitals.md) I'll look at keywords for the states. 

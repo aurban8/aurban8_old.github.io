@@ -12,4 +12,4 @@ Authors: Andrea Urban
 
 {% notebook notebooks/jeopardy_2_states_values_years.ipynb %}
 
-I wouldn't say this is a super interesting result. But the good news is, I did learn how to make a lot of pretty plots. [Next time]({filename}./jeopardy_3_states_wikipedia.md) I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.
+I wouldn't say this is a super interesting result. But the good news is, I did learn how to make a lot of pretty plots. The [jupyter notebook for this blog post can be found on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_2_states_values_years.ipynb). [Next time]({filename}./jeopardy_3_states_wikipedia.md) I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.

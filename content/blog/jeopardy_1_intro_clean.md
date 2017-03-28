@@ -13,12 +13,12 @@ Authors: Andrea Urban
 
 ** Artist's Concept of Lightning on Venus **
 
-*Image Credit: [J. Whatmore, ESA](http://www.esa.int/spaceinimages/Images/2007/11/Artist_s_concept_of_lightning_on_Venus2)*
+*Image Credit: [J. Whatmore, ESA](http://www.esa.int/spaceinimages/Images/2007/11/Artist_s_concept_of_lightning_on_Venus2){:target="_blank"}*
 
 {% notebook notebooks/jeopardy_1_intro_clean_data.ipynb cells[16:25] %}
 
-For reasons that I don't quite understand, the [pelican plugin that renders the notebook on this blog](https://github.com/danielfrg/pelican-ipynb) interprets the html code. (I can see how this might actually be a feature and not a bug.) Anyway... this means I can't show the actual html tags in my dataframe as they appear in the notebook. However, if you look at the [notebook on github](linkehere) you will see it shown correctly. Until I figure this out, I'll include a hacked column that shows the html syntax as it appears in the notebook in the column labeled `question_htmlview`.
+For reasons that I don't quite understand, the [pelican plugin that renders the notebook on this blog](https://github.com/danielfrg/pelican-ipynb){:target="_blank"} interprets the html code. (I can see how this might actually be a feature and not a bug.) Anyway... this means I can't show the actual html tags in my dataframe as they appear in the notebook. However, if you look at the [notebook on github](linkehere) you will see it shown correctly. Until I figure this out, I'll include a hacked column that shows the html syntax as it appears in the notebook in the column labeled `question_htmlview`.
 
 {% notebook notebooks/jeopardy_1_intro_clean_data.ipynb cells[25:] %}
 
-That's it for cleaning the data. [Next time]({filename}./jeopardy_2_states_values.md), I'll take a look at the relationship between the dollar value of a state and its frequency of appearance on Jeopardy.
+That's it for cleaning the data. You can find this [jupyter notebook on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_1_intro_clean_data.ipynb){:target="_blank"}. [Next time]({filename}./jeopardy_2_states_values.md), I'll take a look at the relationship between the dollar value of a state and its frequency of appearance on Jeopardy.
