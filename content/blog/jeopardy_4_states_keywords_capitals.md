@@ -4,6 +4,7 @@ Category: Blog
 Tags: jeopardy,
 Slug: jeopardy-states-keywords-capitals
 Authors: Andrea Urban
+Summary: *Here's a list of keywords you should know for each state on Jeopardy. Also, don't just recognize the state capital; be able to state it.*
 
 *Here's a list of [keywords](#What-keywords-should-you-know-for-each-state?) you should know for each state on Jeopardy. Also, don't just recognize the [state capital](#State-the-capital.); be able to state it.*
 

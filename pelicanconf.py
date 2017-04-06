@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Andrea Urban'
-SITENAME = "Andrea's First Website"
+SITENAME = "Andrea's Website"
 SITEURL = ''
 
 PATH = 'content'
@@ -26,9 +26,14 @@ AUTHOR_FEED_RSS = None
 #         ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('twitter', 'http://twitter.com/AndreaUrbanPhD'),
-          ('linkedin', 'http://www.linkedin.com/in/andrea-urban-phd'),
-          ('github', 'http://github.com/aurban8'))
+SOCIAL = (('linkedin', 'http://www.linkedin.com/in/andrea-urban-phd'),
+          ('github', 'http://github.com/aurban8'),
+          ('twitter', 'http://twitter.com/AndreaUrbanPhD'))
+
+AVATAR = 'images/main/profile.jpg'
+BANNER = 'images/main/Orion_rotate.jpg'
+BANNER_ALL_PAGES = True
+
 
 DEFAULT_PAGINATION = 10
 
@@ -40,7 +45,7 @@ MARKUP = ('md',)
 
 PLUGIN_PATHS = ['pelican-plugins', 'plugins']
 
-PLUGINS = ['i18n_subsites', 'ipynb.liquid']
+PLUGINS = ['i18n_subsites', 'ipynb.liquid', 'tag_cloud']
 #           , 'liquid_tags.img']
 #'liquid_tags.img', #'liquid_tags.video',
 #           'liquid_tags.notebook',]
@@ -65,3 +70,6 @@ PYGMENTS_STYLE = 'emacs'
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
 
 SUMMARY_MAX_LENGTH = 200
+
+TAG_CLOUD_MAX_ITEMS = 5
+

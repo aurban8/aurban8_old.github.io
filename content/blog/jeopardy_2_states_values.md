@@ -4,6 +4,7 @@ Category: Blog
 Tags: jeopardy,
 Slug: jeopardy-2-states-dollar
 Authors: Andrea Urban
+Summary: *California is the most popular state to appear as a Jeopardy answer. There is no relationship between the frequency of a state's appearance on Jeopardy and its dollar value. There doesn't seem to be an evolution with time of the popularity of states. Many plots are created here.*
 
 *[California is the most popular state to appear as a Jeopardy answer](#State-of-Jeopardy). [There is no relationship between the frequency of a state's appearance on Jeopardy and its dollar value.](#There-is-no-relationship-between-a-state's-popularity-and-its-dollar-value.) [There doesn't seem to be an evolution with time of the popularity of states.](#There-is-no-evolution-in-time-of-the-popularity-of-states.) Many plots are created here.*
 
