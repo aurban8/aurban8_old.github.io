@@ -4,6 +4,7 @@ Category: Blog
 Tags: jeopardy,
 Slug: jeopardy-3-states-wikipedia
 Authors: Andrea Urban
+Status: draft
 Summary: *Wikipedia is used to trace popularity. Article word count does not correlate with Jeopardy popularity. However, wikipedia pages views do correlate with Jeopardy popularity. What's the difference between New York City and New York State?*
 
 *Wikipedia is used to trace popularity. [Article word count does not correlate with Jeopardy popularity.](#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.) However, [wikipedia pages views do correlate with Jeopardy popularity.](#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.) What's the difference between [New York City and New York State?](#New-York-City-or-New-York-State?)*

@@ -1,7 +1,7 @@
 Title: Cleaning a Data Set, or Aaargh! Regular Expressions!
-Date: 2017-03-18 12:01
+Date: 2017-04-18 12:01
 Category: Blog
-Tags: jeopardy, regular expressions, data cleaning
+Tags: jeopardy, regular-expressions, data-cleaning
 Slug: jeopardy-1-intro
 Authors: Andrea Urban
 Summary: *Introducing and cleaning the Jeopardy dataset. What's in the dataset? Cleaning up the text data by removing links. Regular expressions are greedy. Standardizing the dollar amounts after value change in 2001.*

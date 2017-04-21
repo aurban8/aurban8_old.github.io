@@ -1,16 +1,27 @@
-Title: Jeopardy! - Part 2: U.S. States and Their Dollar Values
-Date: 2017-03-20 12:01
+Title: The State of Jeopardy
+Date: 2017-04-20 12:01
 Category: Blog
-Tags: jeopardy,
+Tags: jeopardy, chi-square, p-value, linear-regression, distribution-sampling, random-numbers
 Slug: jeopardy-2-states-dollar
 Authors: Andrea Urban
-Summary: *California is the most popular state to appear as a Jeopardy answer. There is no relationship between the frequency of a state's appearance on Jeopardy and its dollar value. There doesn't seem to be an evolution with time of the popularity of states. Many plots are created here.*
+Summary: *California is the most popular state to appear as a Jeopardy answer. Popular U.S. states tend to have lower dollar values. After many assumptions, it is more lucrative to study popular U.S. states.*
 
-*[California is the most popular state to appear as a Jeopardy answer](#State-of-Jeopardy). [There is no relationship between the frequency of a state's appearance on Jeopardy and its dollar value.](#There-is-no-relationship-between-a-state's-popularity-and-its-dollar-value.) [There doesn't seem to be an evolution with time of the popularity of states.](#There-is-no-evolution-in-time-of-the-popularity-of-states.) Many plots are created here.*
+*[California is the most popular state to appear as a Jeopardy answer.](#State-of-Jeopardy)  [Popular U.S. states tend to have lower dollar values.](#Money-Money-Money!) After many assumptions, it is more lucrative to study popular U.S. states.*
 
 
 [Last time]({filename}./jeopardy_1_intro_clean.md), I cleaned the [Jeopardy data set](https://www.reddit.com/r/datasets/comments/1uyd0t/200000_jeopardy_questions_in_a_json_file/) and created a JSON file to use for later. Well, later has arrived! Let's take a look at the dataset and look for some patterns.
 
-{% notebook notebooks/jeopardy_2_states_values_years.ipynb %}
+{% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[0:27] %}
 
-I wouldn't say this is a super interesting result. But the good news is, I did learn how to make a lot of pretty plots. The [jupyter notebook for this blog post can be found on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_2_states_values_years.ipynb). [Next time]({filename}./jeopardy_3_states_wikipedia.md) I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.
+<center> ![Donald Duck counting money, https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif ]({filename}/images/donaldduck.gif) </center>
+
+{% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[27:47] %}
+
+<center> ![Visual explanation of completing the squares, https://media.giphy.com/media/6wlrY2ABvHxDi/giphy.gif]({filename}/images/completesquare.gif) </center>
+
+{% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[47:] %}
+
+
+
+
+The [jupyter notebook for this blog post can be found on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_2_states_values_years.ipynb). [Next time]({filename}./jeopardy_3_states_wikipedia.md) I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.
