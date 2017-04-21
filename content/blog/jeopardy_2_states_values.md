@@ -13,11 +13,16 @@ Summary: *California is the most popular state to appear as a Jeopardy answer. P
 
 {% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[0:27] %}
 
-<center> ![Donald Duck counting money, https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif ]({filename}/images/donaldduck.gif) </center>
+<center> ![Donald Duck counting money, https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif ]({filename}/images/donaldduck.gif)
+
+[giphy](https://giphy.com/gifs/yosub-money-donald-duck-cash-xTiTnqUxyWbsAXq7Ju?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=)  </center>
 
 {% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[27:47] %}
 
-<center> ![Visual explanation of completing the squares, https://media.giphy.com/media/6wlrY2ABvHxDi/giphy.gif]({filename}/images/completesquare.gif) </center>
+<center> ![Visual explanation of completing the squares, https://media.giphy.com/media/6wlrY2ABvHxDi/giphy.gif]({filename}/images/completesquare.gif)
+
+[giphy](https://giphy.com/gifs/animation-math-geometry-6wlrY2ABvHxDi?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=)
+</center>
 
 {% notebook notebooks/jeopardy_2_states_values_years.ipynb cells[47:] %}
 
