@@ -9,7 +9,7 @@ Summary: *Wikipedia is used to trace popularity. Article word count does not cor
 
 *Wikipedia is used to trace popularity. [Article word count does not correlate with Jeopardy popularity.](#Wikipedia-article-word-counts-don't-trace-Jeopardy-popularity.) However, [wikipedia pages views do correlate with Jeopardy popularity.](#Wikipedia-page-views-is-a-good-tracer-of-Jeopardy-popularity.) What's the difference between [New York City and New York State?](#New-York-City-or-New-York-State?)*
 
-[Last time]({filename}./jeopardy_2_states_values.md), I explored the relationship between Jeopardy answers that were U.S. states and their values and appearance by year. Here, I want to investigate how I can trace a state's *popularity*. Why do certain states appear more frequently on Jeopardy?. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.
+[Last time]({filename}./jeopardy_2_states_values.md), I explored the relationship between Jeopardy answers that were U.S. states and their values. Here, I want to investigate how I can trace a state's *popularity*. Why do certain states appear more frequently on Jeopardy?. I'm going to use wikipedia article word counts and wikipedia views as a way of quantifying popularity.
 
 
 {% notebook notebooks/jeopardy_3_states_wikipedia.ipynb cells[0:29] %}
