@@ -63,7 +63,8 @@ JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 #BOOTSTRAP_THEME = 'cosmo'
 BOOTSTRAP_THEME = 'simplex'
 
-STATIC_PATHS = ['images']#, notebook]
+STATIC_PATHS = ['images']#, 'extra/CNAME']#, notebook]
+##EXTRA_PATH_METADATA = {'extra/CNAME':{'path':'CNAME'},}
 
 PYGMENTS_STYLE = 'emacs'
 
