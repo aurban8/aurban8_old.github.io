@@ -65,6 +65,7 @@ BOOTSTRAP_THEME = 'simplex'
 
 STATIC_PATHS = ['images']#, 'extra/CNAME']#, notebook]
 ##EXTRA_PATH_METADATA = {'extra/CNAME':{'path':'CNAME'},}
+FAVICON = 'images/favicon.jpg'
 
 PYGMENTS_STYLE = 'emacs'
 
@@ -73,4 +74,8 @@ DISPLAY_ARTICLE_INFO_ON_INDEX = True
 SUMMARY_MAX_LENGTH = 200
 
 TAG_CLOUD_MAX_ITEMS = 5
+
+TWITTER_CARDS = True
+USE_OPEN_GRAPH = True
+OPEN_GRAPH_IMAGE = 'content/image/favicon.jpg'
 
