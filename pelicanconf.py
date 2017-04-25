@@ -77,5 +77,5 @@ TAG_CLOUD_MAX_ITEMS = 5
 
 TWITTER_CARDS = True
 USE_OPEN_GRAPH = True
-OPEN_GRAPH_IMAGE = 'content/image/favicon.jpg'
+OPEN_GRAPH_IMAGE = 'images/favicon.jpg'
 

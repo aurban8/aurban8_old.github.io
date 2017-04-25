@@ -4,6 +4,7 @@ Category: Blog
 Tags: jeopardy, regular-expressions, data-cleaning
 Slug: jeopardy-1-intro
 Authors: Andrea Urban
+og_image: 'images/Artist_s_concept_of_lightning_on_Venus.jpg'
 Summary: *Introducing and cleaning the Jeopardy dataset. What's in the dataset? Cleaning up the text data by removing links. Regular expressions are greedy. Standardizing the dollar amounts after value change in 2001.*
 
 *Introducing and cleaning the Jeopardy dataset. What's in the dataset? Cleaning up the text data by removing links. [Regular expressions are greedy](#Regular-expressions-are-greedy.). [Standardizing the dollar amounts after value change in 2001.](#Fixing-the-dollar-amounts-after-the-change-in-2001.)*

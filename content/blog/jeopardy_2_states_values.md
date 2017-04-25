@@ -4,6 +4,7 @@ Category: Blog
 Tags: jeopardy, chi-square, p-value, linear-regression, distribution-sampling, random-numbers
 Slug: jeopardy-2-states-dollar
 Authors: Andrea Urban
+og_image: 'images/Artist_s_concept_of_lightning_on_Venus.jpg'
 Summary: *California is the most popular state to appear as a Jeopardy answer. Popular U.S. states tend to have lower dollar values. After many assumptions, it is slightly more lucrative to study popular U.S. states.*
 
 *[California is the most popular state to appear as a Jeopardy answer.](#State-of-Jeopardy)  [Popular U.S. states tend to have lower dollar values.](#Money-Money-Money!) After many assumptions, it is slightly more lucrative to study popular U.S. states.*
