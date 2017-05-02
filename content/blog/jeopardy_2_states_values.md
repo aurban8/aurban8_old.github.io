@@ -1,7 +1,7 @@
 Title: The State of Jeopardy
 Date: 2017-04-20 12:01
 Category: Blog
-Tags: jeopardy, chi-square, p-value, linear-regression, distribution-sampling, random-numbers
+Tags: jeopardy, chi-square, p-value, linear-regression, distribution-sampling, random-numbers, pearson
 Slug: jeopardy-2-states-dollar
 Authors: Andrea Urban
 og_image: 'images/Artist_s_concept_of_lightning_on_Venus.jpg'
