@@ -36,4 +36,4 @@ Summary: *California is the most popular state to appear as a Jeopardy answer. P
 </center>
 
 
-The [jupyter notebook for this blog post can be found on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_2_states_values_years.ipynb). Next time I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.
+The [jupyter notebook for this blog post can be found on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/jeopardy_2_states_values_years.ipynb). [Next time]({filename}./jeopardy_3_states_wikipedia.md) I'll look into other datasets which might give more insight on why certain states are more likely to appear compared to others.
