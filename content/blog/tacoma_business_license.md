@@ -38,14 +38,4 @@ Summary: Investigating Tacoma business licenses. *The Port of Tacoma is differen
 
 {% notebook notebooks/tacoma_business_licenses.ipynb cells[46:] %}
 
-
-
-
-TODO:
-* Insert github address for pickle file.*
-
-** insert notebook github address
-That's all for now. I hope you've enjoyed my foray in clustering analysis and learned about how it can be used to gain some insights into your data.
-
-
-If you have any questions, feel free to post them below. You can find [this jupyter notebook on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/tacoma_business_licenses.ipynb){:target="_blank"}. 
+That's all for now. I hope you've enjoyed my foray in clustering analysis and learned about how it can be used to gain some insights into your data. If you have any questions, feel free to post them below. You can find [this jupyter notebook on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/tacoma_business_licenses.ipynb){:target="_blank"}. 
