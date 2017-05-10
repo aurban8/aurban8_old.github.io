@@ -7,7 +7,7 @@ Authors: Andrea Urban
 Status: draft
 Summary: Investigating Tacoma business licenses. *The Port of Tacoma is different from the rest of Tacoma. Taxi services and rental housing are big businesses in Tacoma. Using clustering to find features of the dataset.*
 
-*Investigating Tacoma business licenses. [The Port of Tacoma is different from the rest of Tacoma.](#The-Port-of-Tacoma-is-different-from-the-rest-of-Tacoma.) [Taxi services and rental housing are big businesses in Tacoma](#Taking-a-deeper-look-at-taxi-services-and-residential-lessors.) [Using clustering to find features of the dataset.](#Finding-groups-with-similar-features-in-the-dataset-using-K-modes-clustering)*
+*Investigating Tacoma business licenses. [The Port of Tacoma is different from the rest of Tacoma.](#ZIP-Codes:-Downtown-Tacoma-and-the-Port-of-Tacoma-are-different-from-the-rest-of-Tacoma.) [Taxi services and rental housing are big businesses in Tacoma](#Taking-a-deeper-look-at-the-taxi-and-rental-housing-industry.) [Using clustering to find features of the dataset.](#Finding-groups-with-similar-features-in-the-dataset-using-K-modes-clustering)*
 
 
 
@@ -40,8 +40,12 @@ Summary: Investigating Tacoma business licenses. *The Port of Tacoma is differen
 
 
 
+
 TODO:
 * Insert github address for pickle file.*
 
 ** insert notebook github address
-I hope you enjoyed this post. If you have any questions, feel free to post them below. You can find [this jupyter notebook on github]( ????  ){:target="_blank"}. 
+That's all for now. I hope you've enjoyed my foray in clustering analysis and learned about how it can be used to gain some insights into your data.
+
+
+If you have any questions, feel free to post them below. You can find [this jupyter notebook on github](https://github.com/aurban8/aurban8.github.io/blob/dev/content/notebooks/tacoma_business_licenses.ipynb){:target="_blank"}. 
