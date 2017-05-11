@@ -18,7 +18,7 @@ My first `hello world` program was written in BASIC, followed shortly after by a
 
 
 
-I live in the Pacific Northwest where I am surrounded by water, mountains, and tall, tall trees. I enjoy learning new things and working with others to solve interesting problems. I have worked as an astrophysicist at NASA, a science professor at a community college, and an online homework curriculum designer.
+I live in the Pacific Northwest where I am surrounded by water, mountains, and tall, tall trees. I enjoy learning new things and working with others to solve interesting problems. I have worked as an astrophysicist at NASA, a science professor at a community college, and an online homework curriculum designer. To learn more about my career, check out my [linkedin page](https://www.linkedin.com/in/andrea-urban-phd).
 
 
 
