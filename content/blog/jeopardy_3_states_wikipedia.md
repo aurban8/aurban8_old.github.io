@@ -1,7 +1,7 @@
 Title: U.S. States on Jeopardy and Wikipedia 
 Date: 2017-05-02 12:01
 Category: Blog
-Tags: jeopardy, wikipedia, p-value, pearson
+Tags: jeopardy, wikipedia, p-value, pearson, pandas
 Slug: jeopardy-3-states-wikipedia
 Authors: Andrea Urban
 og_image: 'images/statesvswikipedia.png'

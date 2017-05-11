@@ -4,7 +4,7 @@ Category: Blog
 Tags: tacoma, business-licenses, clustering, k-modes, pandas
 Slug: tacoma-business-licenses
 Authors: Andrea Urban
-Summary: Investigating Tacoma business licenses. *The Port of Tacoma is different from the rest of Tacoma. Taxi services and rental housing are big businesses in Tacoma. Using clustering to find features of the dataset.*
+Summary: *Investigating Tacoma business licenses. The Port of Tacoma is different from the rest of Tacoma. Taxi services and rental housing are big businesses in Tacoma. Using clustering to find features of the dataset.*
 
 *Investigating Tacoma business licenses. [The Port of Tacoma is different from the rest of Tacoma.](#ZIP-Codes:-Downtown-Tacoma-and-the-Port-of-Tacoma-are-different-from-the-rest-of-Tacoma.) [Taxi services and rental housing are big businesses in Tacoma](#Taking-a-deeper-look-at-the-taxi-and-rental-housing-industry.) [Using clustering to find features of the dataset.](#Finding-groups-with-similar-features-in-the-dataset-using-K-modes-clustering)*
 
