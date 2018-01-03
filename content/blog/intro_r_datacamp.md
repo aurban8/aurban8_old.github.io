@@ -4,7 +4,7 @@ Category: Blog
 Tags: r, rstats, learning, python, online-learning, notecards
 Slug: learning-r
 Authors: Andrea Urban
-Summary: *Learning R with DataCamp's. Comparing R and Python. Pictures of Notecards.*
+Summary: *Learning R with DataCamp. Comparing R and Python. Pictures of Notecards.*
 
 *Learning R with DataCamp. Comparing R and Python. Pictures of Notecards.*
 
