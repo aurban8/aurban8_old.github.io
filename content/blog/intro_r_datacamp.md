@@ -6,7 +6,7 @@ Slug: learning-r
 Authors: Andrea Urban
 Summary: *Learning R with DataCamp's. Comparing R and Python. Pictures of Notecards.*
 
-*Learning R with DataCamp's. Comparing R and Python. Pictures of Notecards.*
+*Learning R with DataCamp. Comparing R and Python. Pictures of Notecards.*
 
 I recently worked through [DataCamp’s Introduction to R course](https://www.datacamp.com/courses/free-introduction-to-r){:target="_blank"}. This was my first time typing R code. I’ve seen it before but haven’t really learned too much about it. I made some notes on notecards while I was going through the exercises and I’ll share them below with some of my thoughts. 
 
@@ -55,7 +55,7 @@ The `factor` type in R is interesting. I can see how this could be very useful w
 <center> ![Notecard5]({filename}/images/r_intro/r_fig3a.JPG)
 Notecard #5: Dataframes  </center> 
 
-Using `str` to get the “structure of a dataframe seems dangerous because of its similarity to `string`.  Seems like there are other better options for structure. Here are [few](http://www.thesaurus.com/browse/structure){:target="_blank"} I found
+Using `str` to get the “structure" of a dataframe seems dangerous because of its similarity to `string`.  Seems like there are other better options for structure. Here are [few](http://www.thesaurus.com/browse/structure){:target="_blank"} I found
 
 
 <center> ![Synonyms]({filename}/images/r_intro/r_structure_synonyms.png)
