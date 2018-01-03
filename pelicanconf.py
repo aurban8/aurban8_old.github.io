@@ -59,15 +59,21 @@ JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 #NOTEBOOK_DIR = 'notebooks'
 
-#BOOTSTRAP_THEME = 'spacelab'
-#BOOTSTRAP_THEME = 'cosmo'
-BOOTSTRAP_THEME = 'simplex'
 
-STATIC_PATHS = ['images']#, 'extra/CNAME']#, notebook]
+#CUSTOM_CSS = 'static/custom.css'
+STATIC_PATHS = ['images']#, 'extra/custom.css']#, 'extra/CNAME']#, notebook]
+#EXTRA_PATH_METADATA = {'extra/custom.css': {'path': 'static/custom.css'}}
 ##EXTRA_PATH_METADATA = {'extra/CNAME':{'path':'CNAME'},}
 FAVICON = 'images/favicon.jpg'
 
+
 PYGMENTS_STYLE = 'emacs'
+
+#BOOTSTRAP_THEME = 'spacelab'
+#BOOTSTRAP_THEME = 'cosmo'
+#BOOTSTRAP_THEME = 'simplex'
+BOOTSTRAP_THEME = 'yeti'
+
 
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
 

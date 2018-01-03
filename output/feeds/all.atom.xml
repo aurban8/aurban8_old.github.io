@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Andrea's Website</title><link href="https://aurban8.github.io/" rel="alternate"></link><link href="https://aurban8.github.io/feeds/all.atom.xml" rel="self"></link><id>https://aurban8.github.io/</id><updated>2017-05-09T12:01:00-07:00</updated><entry><title>Tacoma Business Licenses</title><link href="https://aurban8.github.io/tacoma-business-licenses.html" rel="alternate"></link><published>2017-05-09T12:01:00-07:00</published><updated>2017-05-09T12:01:00-07:00</updated><author><name>Andrea Urban</name></author><id>tag:aurban8.github.io,2017-05-09:/tacoma-business-licenses.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Investigating Tacoma business licenses. The Port of Tacoma is different from the rest of Tacoma. Taxi services and rental housing are big businesses in Tacoma. Using clustering to find features of the dataset.&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Investigating Tacoma business licenses. &lt;a href="#ZIP-Codes:-Downtown-Tacoma-and-the-Port-of-Tacoma-are-different-from-the-rest-of-Tacoma."&gt;The Port of Tacoma is different from the rest of Tacoma.&lt;/a&gt; &lt;a href="#Taking-a-deeper-look-at-the-taxi-and-rental-housing-industry."&gt;Taxi services and rental housing are big businesses in Tacoma&lt;/a&gt; &lt;a href="#Finding-groups-with-similar-features-in-the-dataset-using-K-modes-clustering"&gt;Using clustering to find features of the dataset.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Andrea's Website</title><link href="https://aurban8.github.io/" rel="alternate"></link><link href="https://aurban8.github.io/feeds/all.atom.xml" rel="self"></link><id>https://aurban8.github.io/</id><updated>2018-01-03T12:01:00-08:00</updated><entry><title>Learning R with DataCamp</title><link href="https://aurban8.github.io/learning-r.html" rel="alternate"></link><published>2018-01-03T12:01:00-08:00</published><updated>2018-01-03T12:01:00-08:00</updated><author><name>Andrea Urban</name></author><id>tag:aurban8.github.io,2018-01-03:/learning-r.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Learning R with DataCamp's. Comparing R and Python. Pictures of Notecards.&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Learning R with DataCamp's. Comparing R and Python. Pictures of Notecards.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I recently worked through &lt;a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank"&gt;DataCamp’s Introduction to R course&lt;/a&gt;. This was my first time typing R code. I’ve seen it before but haven’t really learned too much about it. I made some notes on notecards while I was going through the exercises and I’ll share them below with some of my thoughts. &lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard1" src="https://aurban8.github.io/images/r_intro/r_fig1a.JPG"&gt;
+Notecard #1: My introduction to &lt;code&gt;&amp;lt;-&lt;/code&gt;   &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;Besides the unique way of assigning variables (&lt;code&gt;&amp;lt;-&lt;/code&gt;) , R seems pretty straightforward. I was curious about why “c” was used to create a vector. Does it stand for “create,” “concatenate,” something else? &lt;a href="https://stackoverflow.com/questions/11488820/why-use-c-to-define-vector" target="_blank"&gt;Stackoverflow to the rescue!&lt;/a&gt; It looks like “c” stands for combine. The command &lt;strong&gt;combines&lt;/strong&gt; single-value vectors into a single vector with multiple values. Ok, got it.&lt;/p&gt;
+&lt;p&gt;Also, I had a question right from the start about whether there was a print function. It seems like to print the values of a variable, the user just types the variable’s name. That seems simple enough, but I’m still on the lookout for an actual “print” command.  I wonder if it even exists...&lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard2" src="https://aurban8.github.io/images/r_intro/r_fig1b.JPG"&gt;
+Notecard #2: Hallelujah! R starts counting with the number 1  &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;I am &lt;strong&gt;VERY EXCITED&lt;/strong&gt; about indexing starting at 1. &lt;strong&gt;VERY EXCITED!&lt;/strong&gt;
+I’ve tweeted about this topic more than once.&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;There are two kinds of people in the world.&lt;br&gt;&lt;br&gt;0) Those who can count.&lt;br&gt;&lt;br&gt;1) Those who can&amp;#39;t.&lt;br&gt;&lt;br&gt;2) Those who count starting with 0.&lt;/p&gt;&amp;mdash; Andrea Urban (@AndreaUrbanPhD) &lt;a href="https://twitter.com/AndreaUrbanPhD/status/870697006309691392?ref_src=twsrc%5Etfw"&gt;June 2, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;How *some* programmers count cats: &amp;quot;Let&amp;#39;s see... 0, 1, 2, 3.... Hmm..  This means there are 4 cats.&amp;quot; &lt;a href="https://twitter.com/hashtag/cats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#cats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/counting?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#counting&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/numbers?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#numbers&lt;/a&gt;&lt;/p&gt;&amp;mdash; Andrea Urban (@AndreaUrbanPhD) &lt;a href="https://twitter.com/AndreaUrbanPhD/status/785515478277947392?ref_src=twsrc%5Etfw"&gt;October 10, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;p&gt;I am also a fan of how selecting parts of a vector includes ALL the digits mentioned in the select statement. In Python, it’s not as clear, at least to me. Here's some Python code to demonstrate this.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Define a list in python&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# Return 2nd and 3rd element (Remember python starts numbering at 0.)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard3" src="https://aurban8.github.io/images/r_intro/r_fig2a.JPG"&gt;
+Notecard #3: Matrices   &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;It seems like R’s matrices are like numpy arrays, they can only contain data of one type. &lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard4" src="https://aurban8.github.io/images/r_intro/r_fig2b.JPG"&gt;
+Notecard #4: Factors   &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;factor&lt;/code&gt; type in R is interesting. I can see how this could be very useful when performing statistical operations like chi-square tests.&lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard5" src="https://aurban8.github.io/images/r_intro/r_fig3a.JPG"&gt;
+Notecard #5: Dataframes  &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;Using &lt;code&gt;str&lt;/code&gt; to get the “structure of a dataframe seems dangerous because of its similarity to &lt;code&gt;string&lt;/code&gt;.  Seems like there are other better options for structure. Here are &lt;a href="http://www.thesaurus.com/browse/structure" target="_blank"&gt;few&lt;/a&gt; I found&lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Synonyms" src="https://aurban8.github.io/images/r_intro/r_structure_synonyms.png"&gt;
+Synonyms for "Structure"   &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;My suggestion is skeleton! 💀 &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ske()&lt;/code&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Notecard6" src="https://aurban8.github.io/images/r_intro/r_fig3b.JPG"&gt;
+Notecard #6: Lists  &lt;/center&gt; &lt;/p&gt;
+&lt;p&gt;In this course, I learned about the various data structures in R: vectors, matrices, factors, dataframes, and lists.&lt;/p&gt;
+&lt;p&gt;I was not a fan of the examples used in the beginning of the course (gambling, Star Wars, Battle of the Sexes -- Ugh!), but towards the end they started to get a little better (Solar System, Movies -- Yay!). &lt;/p&gt;
+&lt;p&gt;Overall I enjoyed learning R and I hope to learn more! 
+If you have any questions or comments, feel free to post them below or &lt;a href="https://twitter.com/AndreaUrbanPhD" target="_blank"&gt;tweet at me&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;center&gt; &lt;img alt="Certificate" src="https://aurban8.github.io/images/r_intro/r_certificate.png"&gt;
+My Super Awesome Certificate! &lt;/center&gt; &lt;/p&gt;</content><category term="r"></category><category term="rstats"></category><category term="learning"></category><category term="python"></category><category term="online-learning"></category><category term="notecards"></category></entry><entry><title>Tacoma Business Licenses</title><link href="https://aurban8.github.io/tacoma-business-licenses.html" rel="alternate"></link><published>2017-05-09T12:01:00-07:00</published><updated>2017-05-09T12:01:00-07:00</updated><author><name>Andrea Urban</name></author><id>tag:aurban8.github.io,2017-05-09:/tacoma-business-licenses.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Investigating Tacoma business licenses. The Port of Tacoma is different from the rest of Tacoma. Taxi services and rental housing are big businesses in Tacoma. Using clustering to find features of the dataset.&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Investigating Tacoma business licenses. &lt;a href="#ZIP-Codes:-Downtown-Tacoma-and-the-Port-of-Tacoma-are-different-from-the-rest-of-Tacoma."&gt;The Port of Tacoma is different from the rest of Tacoma.&lt;/a&gt; &lt;a href="#Taking-a-deeper-look-at-the-taxi-and-rental-housing-industry."&gt;Taxi services and rental housing are big businesses in Tacoma&lt;/a&gt; &lt;a href="#Finding-groups-with-similar-features-in-the-dataset-using-K-modes-clustering"&gt;Using clustering to find features of the dataset.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
